@@ -1,4 +1,35 @@
-body {
-   background-color: #000;
-   color: #fafafa; 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;500;600;700;900&family=Playfair+Display&display=swap');
+
+body {    
+   font-family: 'Playfair Display', serif;
+}
+
+nav.nav-extended {
+    height: auto;
+    background-color: #424242;
+}
+
+nav .brand-logo {    
+    padding: 5px;
+    font-weight: 600;
+    font-family: 'Cinzel Decorative', cursive;
+    background: linear-gradient(to right, green 20%, white 67%,  red 20%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.brand-logo {
+    font-family: 'Cinzel Decorative', cursive;
+    background: linear-gradient(to right, green 20%, white 72%,  red 20%);
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.sidenav.right-aligned {    
+    background-color: #424242;    
+}
+
+.sidenav li>a {
+    color: #fafafa;
 }
