@@ -20,6 +20,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+# all recipes
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
