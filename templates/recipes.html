@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>la_mexicana</title>
+</head>
+<body>
+    {% for recipe in recipes %}
+    {{ recipe.recipe_name }}<br>
+    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_image }}" srcset="">
+    {{ recipe.category_name }}<br>
+    {{ recipe.ingredients_list }}<br>
+    {{ recipe.preparation_time }}<br>
+    {{ recipe.difficulty }}<br>
+    {{ recipe.created_by }}<br>
+    {% endfor %}
+</body>
+</html>
