@@ -3,7 +3,7 @@
 body {    
    font-family: 'Playfair Display', serif;
 }
-
+/*---- Main Nav bar ---*/
 nav.nav-extended {
     height: auto;
     background-color: #424242;
@@ -25,11 +25,25 @@ nav .brand-logo {
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
-
+/*--- Side Nav for mobile view ---*/
 .sidenav.right-aligned {    
     background-color: #424242;    
 }
 
 .sidenav li>a {
     color: #fafafa;
+}
+
+/*--- Home page ---*/
+.landing-image{
+    background: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/landing_image.jpg);
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: space-around;
 }

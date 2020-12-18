@@ -18,10 +18,10 @@
         <!--- main top nav bar -->
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">La Mexicana</a>
+                <a href="{{ url_for('home_page') }}" class="brand-logo">La Mexicana</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
                     <li><a href="#">Add Recipe</a></li>
@@ -35,7 +35,7 @@
         <!--- side nav bar -->
         <ul class="sidenav" id="mobile-demo">
                     <li><h4 class="brand-logo center-align">La Mexicana</h4></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
                     <li><a href="#">Add Recipe</a></li>

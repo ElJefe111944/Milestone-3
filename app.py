@@ -18,8 +18,17 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# Home
 @app.route("/")
+@app.route('/home_page')
+def home_page():
+    """
+    index page to be displayed.
+    """
+    return render_template("index.html")
+
+
+
 # all recipes
 @app.route("/get_recipes")
 def get_recipes():
@@ -30,4 +39,5 @@ def get_recipes():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True) # change to False for submission
+            debug=True) 
+        # change to False for submission
