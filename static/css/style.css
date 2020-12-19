@@ -67,7 +67,8 @@ nav .brand-logo {
     position: absolute;
     top: 27%;
     width: 50%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
+    border-radius: 25px;
 }
 
 .fa-search {
@@ -87,12 +88,46 @@ nav .brand-logo {
     padding: 0.75rem;
     border-radius: 0;
     margin-left: 1rem;
+    border-radius: 25px;
+    font-family: 'Playfair Display', serif;   
+}
+
+.searchButton:hover {
+    background-color: rgb(12, 180, 180);
+    cursor: pointer;
 }
 
 a.allRecipes {
     color: #fafafa;
 }
 
+a.allRecipes:hover {
+    color: rgb(12, 180, 180);
+}
+
 i.fas.fa-arrow-circle-right {
     margin-left: 0.5rem;
+}
+
+/*--- Recipes.html ---*/
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    background-color: #f1ecec;
+}
+
+.card .card-image .card-title {
+    background: rgba(0,0,0,0.4);
+}
+
+card .card-action {
+    background-color: #f1ecec;
+}
+
+.card .card-action {
+    background-color: #f1ecec;
+}
+
+.card .card-content p {    
+    font-weight: 900;
 }
