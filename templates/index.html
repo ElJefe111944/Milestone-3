@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<body class="landing-image">
-    <div class="wrapper">
-        
 
+<body>
+    <div id="bg">
+        <div class="wrapper">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <div class="row card-panel">
+                <form action="{{ url_for('search') }}" method="POST" class="s12">
+                <div class="row valign-wrapper center-align">
+                    <i class="fas fa-search prefix white-text"></i>
+                    <input type="search" name="search_recipe" id="search_recipe" placeholder="Search Recipe..."
+                        minlength="3" class="validate searchBar" required>
+                    <button type="submit" class="searchButton" name="action">Search</button>
+                </div>
+                <div class="col">
+                    <a href="#" class="allRecipes">See all recipes<i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
-     
 </body>
-
 
     
 {% endblock %}
+

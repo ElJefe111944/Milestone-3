@@ -36,6 +36,14 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search_recipe = request.form.get("search_recipe")
+    recipes = mongo.db.recipes.find({"$text": {"$search": search_recipe}})
+    return render_template("recipes.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

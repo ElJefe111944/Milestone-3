@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;500;600;700;900&family=Playfair+Display&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {    
    font-family: 'Playfair Display', serif;
 }
@@ -35,8 +42,12 @@ nav .brand-logo {
 }
 
 /*--- Home page ---*/
-.landing-image{
-    background: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/landing_image.jpg);
+#bg {
+    background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/landing_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center center;
 }
 
 .wrapper {
@@ -46,4 +57,42 @@ nav .brand-logo {
     height: 100%;
     background: rgba(0,0,0,0.4);
     justify-content: space-around;
+}
+
+.wrapper h2 {
+    color: #fafafa;
+}
+
+.card-panel {
+    position: absolute;
+    top: 27%;
+    width: 50%;
+    background: rgba(0,0,0,0.5);
+}
+
+.fa-search {
+    padding: 0.5rem;
+}
+
+.searchBar {
+  border: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  flex: 1;
+}
+
+.searchButton {
+    background: rgba(0,0,0,0.9);
+    border: 0;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0;
+    margin-left: 1rem;
+}
+
+a.allRecipes {
+    color: #fafafa;
+}
+
+i.fas.fa-arrow-circle-right {
+    margin-left: 0.5rem;
 }
