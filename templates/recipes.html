@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
+        <!--- Search by Category filter -->
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <label>Materialize Select</label>
+        </div>
+    </div>
+    <div class="row">
         {% for recipe in recipes %}
         <div class="col s6 m6">
             <div class="card">
@@ -9,7 +21,7 @@
                     <span class="card-title">{{ recipe.recipe_name }}</span>
                 </div>
                 <div class="card-content">
-                    <p><em>Ingredients: </em><br><br>{{ recipe.recipe_description }}</p><br>
+                    <p><br>{{ recipe.recipe_description }}</p><br>
                     <p><em>Preparation time: {{ recipe.preparation_time }}</em></p><br>
                     <p><em>Created by: {{ recipe.created_by }}</em></p>
                 </div>
@@ -19,7 +31,7 @@
             </div>
         </div>
         {% endfor %}
-    </div>  
+    </div>
     
-
-{% endblock %}
+    
+    {% endblock %}
