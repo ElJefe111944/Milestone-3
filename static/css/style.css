@@ -110,6 +110,14 @@ i.fas.fa-arrow-circle-right {
 }
 
 /*--- Recipes.html ---*/
+    /*--- Filter ---*/
+.filter {
+    width: 30%;
+    left: 35%;
+    right: 35%;
+}
+
+    /*---- Recipe cards ---*/
 .card .card-content {
     padding: 24px;
     border-radius: 0 0 2px 2px;
