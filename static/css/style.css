@@ -139,3 +139,21 @@ card .card-action {
 .card .card-content p {    
     font-weight: 900;
 }
+
+/*--- Recipe.html ---*/
+.full-recipe {
+    background-color: #f1ecec;
+}
+
+p.recipe-text {
+    font-weight: bolder;
+}
+
+.return-btn {
+    padding-top: 20px;   
+} 
+
+.return-btn a {    
+    color: #ffab40 !important;
+    font-family: bolder;
+} 
