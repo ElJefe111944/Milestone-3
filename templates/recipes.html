@@ -2,15 +2,25 @@
 {% block content %}
     <div class="row">
         <!--- Search by Category filter -->
+        <!----
         <form class="input-field filter" action="" method="POST">
-            <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+            <select id="category_name_search" name="category_name_search" required>
+                <option value="" disabled selected>Filter by Category</option>
+                {% for category in categories %}
+                <option value="{{ categories.category_name }}">
+                    {{ categories.category_name }}
+                </option>
+                {% endfor %}
             </select>
-            <label>Materialize Select</label>
+            <label for="category_name_search"></label>
+            <div class="col s12">
+                <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light"">Clear</a>                
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right"></i>
+                </button>
+            </div>
         </form>
+        ---->
     </div>
     <div class="row">
         {% for recipe in recipes %}
@@ -26,7 +36,7 @@
                     <p><em>Created by: {{ recipe.created_by }}</em></p>
                 </div>
                 <div class="card-action">
-                    <a href="#">This is a link</a>
+                    <a href="">This is a link</a>
                 </div>
             </div>
         </div>
