@@ -145,8 +145,14 @@ card .card-action {
     background-color: #f1ecec;
 }
 
+.row.full-recipe {
+    margin-bottom: 0;  
+    padding: 20px;  
+}
+
 p.recipe-text {
     font-weight: bolder;
+    font-size: 18px;
 }
 
 .return-btn {
@@ -154,6 +160,18 @@ p.recipe-text {
 } 
 
 .return-btn a {    
-    color: #ffab40 !important;
     font-family: bolder;
+    font-size: 25px;
 } 
+
+.recipe-text em {
+    font-size: 20px;
+}
+
+.btn, .btn-large, .btn-small {
+    background-color: #424242;
+}
+
+i.fas.fa-undo-alt {
+    margin-left: 0.5rem;
+}

@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row full-recipe">        
+    <div class="row full-recipe">
         <div class="col s12">
-           <h3 class="center">{{ recipe.recipe_name }}</h3> 
+            <h3 class="center">{{ recipe.recipe_name }}</h3>
         </div>
-        <div class="col s12 m6"> <img src="{{ recipe.recipe_image }}" 
-            alt="{{ recipe.recipe_image }}">           
+        <div class="col s12 m6"> <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_image }}"
+                class="responsive-img">
         </div>
-        <div class="col s12 m6">            
+        <div class="col s12 m6">
         </div>
         <div class="card-content">
-            <p class="recipe-text"><em>Ingredients:</em> <br>{{ recipe.ingredients_list }}</p><br>
-            <p class="recipe-text"><em>Method:</em> <br>{{ recipe.method_step1 }}<br>
+            <p class="recipe-text"><em>Ingredients:</em> <br><br>{{ recipe.ingredients_list }}</p><br>
+            <p class="recipe-text"><em>Method:</em> <br><br>{{ recipe.method_step1 }}<br>
                 <br>{{ recipe.method_step2 }}</p>
+            <br>
             <p class="recipe-text"><em>Preparation time: {{ recipe.preparation_time }}</em></p><br>
             <p class="recipe-text"><em>Created by: {{ recipe.created_by }}</em></p>
-        </div>
-        <div class="card-action return-btn">
-            <a href="{{ url_for('get_recipes') }}">Return</a>
+            <div class="card-action return-btn">
+                <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-large">Return<i class="fas fa-undo-alt"></i></a>
+            </div>
         </div>
     </div>
     
