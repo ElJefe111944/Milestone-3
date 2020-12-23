@@ -12,8 +12,7 @@ body {
 }
 /*---- Main Nav bar ---*/
 nav.nav-extended {
-    height: auto;
-    background-color: #424242;
+    height: auto;    
 }
 
 nav .brand-logo {    

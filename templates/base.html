@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font awsome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-     {% block styles %}
-     {% endblock %}
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    {% block styles %}
+    {% endblock %}
     <title>la_mexicana</title>
 </head>
+
 <body>
     <header>
         <!--- main top nav bar -->
-        <nav class="nav-extended">
+        <nav class="nav-extended grey darken-3">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home_page') }}" class="brand-logo">La Mexicana</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -34,29 +37,60 @@
         </nav>
         <!--- side nav bar -->
         <ul class="sidenav" id="mobile-demo">
-                    <li><h4 class="brand-logo center-align">La Mexicana</h4></li>
-                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-                    <li><a href="#">Add Recipe</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Log Out</a></li>
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Register</a></li>
+            <li>
+                <h4 class="brand-logo center-align">La Mexicana</h4>
+            </li>
+            <li><a href="{{ url_for('home_page') }}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+            <li><a href="#">Add Recipe</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
         </ul>
-    
-    
+
+
     </header>
 
     {% block content %}
-    {% endblock %}    
+    {% endblock %}
 
-     <!-- Compiled and minified JavaScript and JQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
+    <!-- Compiled and minified JavaScript and JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
-    {% endblock%}    
+    {% endblock%}
+    <!---- Footer ---->
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                        content.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
