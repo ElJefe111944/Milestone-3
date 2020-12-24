@@ -3,18 +3,34 @@
 
 <body>
     <div id="bg2">
-         <div class="wrapper">
+        <div class="wrapper">
             <h2 class="center">Register</h2>
             <div class="row card-panel">
-                <form action="{{ url_for('search') }}" method="POST" class="s12">
-                    <div class="row valign-wrapper center-align">
-                        <i class="fas fa-user-plus prefix white-text"></i>
-                        <input type="search" name="username" id="search_recipe" placeholder="Username"
-                            minlength="3" class="validate searchBar" required>
-                        
+                <!--- Registration form form materialize --->
+                <form action="{{ url_for('register') }}" method="POST" class="s12">
+                    <div class="row">
+                        <!-- Email/Username -->
+                        <div class="input-field col s12">
+                             <i class="fas fa-user prefix white-text"></i>
+                            <input id="username" name="username" type="text" class="validate">
+                            <label for="username">Username</label>
+                        </div>
                     </div>
-
-                </form>
+                    <!--- Password --->
+                    <div class="row">
+                        <div class="input-field valign-wrapper center-align col s12">
+                            <i class="fas fa-unlock-alt prefix white-text"></i>
+                            <input id="password" name="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>                        
+                    </div>
+                    <!--- Submit Btn --->
+                    <div class="row">                    
+                        <button class="btn waves-effect waves-light col s12" type="submit" name="action">Submit
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    </form>
             </div>
         </div>
     </div>
