@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <div id="bg2">
+         <div class="wrapper">
+            <h2 class="center">Register</h2>
+            <div class="row card-panel">
+                <form action="{{ url_for('search') }}" method="POST" class="s12">
+                    <div class="row valign-wrapper center-align">
+                        <i class="fas fa-user-plus prefix white-text"></i>
+                        <input type="search" name="username" id="search_recipe" placeholder="Username"
+                            minlength="3" class="validate searchBar" required>
+                        
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+    
+{% endblock %}
+
