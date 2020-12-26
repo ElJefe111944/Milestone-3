@@ -8,11 +8,12 @@
             <div class="row card-panel">
                 <!--- Registration form form materialize --->
                 <form action="{{ url_for('register') }}" method="POST" class="s12">
-                    <!-- Email/Username -->
+                    <!-- Username -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user prefix white-text"></i>
-                            <input id="username" name="username" type="text" class="validate" required>
+                            <input id="username" name="username" type="text" class="validate white-text" 
+                            minlength="3" maxlength="15" pattern="[a-zA-Z0-9]{3,15}" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -20,7 +21,7 @@
                         <!-- Profile Image -->
                         <div class="input-field col s12">
                             <i class="fas fa-file-image prefix white-text"></i>
-                            <input id="profile_image" name="profile_image" type="url" pattern="https://.*"
+                            <input id="profile_image" name="profile_image" type="url" pattern="https?://.+"
                                 class="validate">
                             <label for="profile_image">Profile Image <em>(Optional)</em></label>
                         </div>
@@ -29,7 +30,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user-edit prefix white-text"></i>
-                            <textarea id="about" type="text" name="about" class="materialize-textarea"></textarea>
+                            <textarea id="about" type="text" name="about" maxlength="100" class="materialize-textarea"></textarea>
                             <label for="about">About You <em>(Optional)</em></label>
                         </div>
                     </div>
@@ -37,7 +38,10 @@
                     <div class="row">
                         <div class="input-field valign-wrapper center-align col s12">
                             <i class="fas fa-unlock-alt prefix white-text"></i>
-                            <input id="password" name="password" type="password" class="validate" required>
+                            <input id="password" name="password" type="password" class="validate" 
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                            <!-- Password must contain at least one number, Uppercase and lowercase letter -->
+                            <!-- Must be at least 6 characters or more -->
                             <label for="password">Password</label>
                         </div>
                     </div>

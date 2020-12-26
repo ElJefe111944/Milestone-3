@@ -10,6 +10,14 @@
 body {    
    font-family: 'Playfair Display', serif;
 }
+input {
+    color: #fafafa;
+}
+
+textarea {
+    color: #fafafa;
+}
+
 /*---- Main Nav bar ---*/
 nav.nav-extended {
     height: auto;    
@@ -39,6 +47,12 @@ nav .brand-logo {
 .sidenav li>a {
     color: #fafafa;
 }
+
+/*-- Flash messages --*/
+.flashes h5 {
+    line-height: 2;
+}
+
 
 /*--- Home page ---*/
 #bg {
