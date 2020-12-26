@@ -16,9 +16,9 @@
                 <br>{{ recipe.method_step2 }}</p>
             <br>
             <p class="recipe-text"><em>Preparation time: {{ recipe.preparation_time }}</em></p><br>
-            <p class="recipe-text"><em>Created by: {{ recipe.created_by }}</em></p>
-            <div class="card-action return-btn">
-                <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-large">Return<i class="fas fa-undo-alt"></i></a>
+            <p class="recipe-text"><em>Created by: {{ recipe.created_by }}</em></p>           
+            <div class="card-action return-btn">                
+                <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn">Return<i class="fas fa-undo-alt right"></i></a>
             </div>
         </div>
     </div>

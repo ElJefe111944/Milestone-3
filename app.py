@@ -71,6 +71,27 @@ def filter():
 # Registration 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method  == "POST":
+        # verify if the username already exists in datebase
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        # flash message to show user already exists
+        if existing_user:
+            flash("Username already exists")
+            # redirect user back to register form
+            return redirect(url_for("register"))
+            
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # new user into session using session cookie
+        session["users"] = request.form.get("username").lower()
+        # flash message confiriming registration successful
+        flash("Registration Successful")
     return render_template("register.html")
 
 
