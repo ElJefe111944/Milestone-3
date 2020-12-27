@@ -18,6 +18,10 @@ textarea {
     color: #fafafa;
 }
 
+a {
+    color: cyan;
+}
+
 /*---- Main Nav bar ---*/
 nav.nav-extended {
     height: auto;    
@@ -229,4 +233,23 @@ i.fas.fa-undo-alt {
 .btn, .btn-large, .btn-small {
     font-family: 'Playfair Display';
     background-color:#000;
+}
+
+/*-- Log In Page --*/
+#bg3 {
+    background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center center;
+}
+
+.row.card-panel.login-form {
+    top: 15%;
+    padding: 20px;
+    width: 70%;
+}
+
+.col.s12.register-link {
+    padding-top: 15px;
 }

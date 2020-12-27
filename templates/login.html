@@ -2,10 +2,10 @@
 {% block content %}
 
 <body>
-    <div id="bg2">
+    <div id="bg3">
         <div class="wrapper">            
-            <div class="row card-panel">
-                <h3 class="center white-text">Log In</h3>
+            <div class="row card-panel login-form">
+                <h4 class="center white-text">Log In</h4>
                 <!--- Login form from materialize --->
                 <form action="{{ url_for('login') }}" method="POST" class="s12">
                     <!-- Username -->
@@ -35,7 +35,7 @@
                         </button>
                     </div>
                 </form>
-                <div class="col s12">
+                <div class="col s12 register-link">
                     <p class="center-align white-text">
                         New User? 
                         <a href="{{ url_for('register') }}">Register</a>
