@@ -30,7 +30,7 @@
                     <li><a href="#">Add Recipe</a></li>
                     <li><a href="#l">Categories</a></li>
                     <li><a href="#">Log Out</a></li>
-                    <li><a href="#">Log In</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </div>
@@ -46,7 +46,7 @@
             <li><a href="#">Add Recipe</a></li>
             <li><a href="#">Categories</a></li>
             <li><a href="#">Log Out</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
 
@@ -57,7 +57,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes s12">
-                        <h5 class="center-align indigo darken-4 white-text">{{ message }}</h5>
+                        <h5 class="center-align transparent white-text">{{ message }}</h5>
                     </div>
                 {% endfor %}
             {% endif %}
