@@ -99,7 +99,7 @@ def register():
     return render_template("register.html")
 
 
-    # User Log In
+# User Log In
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -128,7 +128,7 @@ def login():
 
     return render_template("login.html")
 
-    # Profile
+# Profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Get the sessions user's username from database
@@ -139,6 +139,16 @@ def profile(username):
         return render_template("profile.html", user=user, recipes=recipes)
 
     return redirect(url_for("login"))
+
+# Log out
+@app.route("/logout")
+def logout():
+    # remove the user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 
 
 

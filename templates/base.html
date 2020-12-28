@@ -24,14 +24,21 @@
                 <a href="{{ url_for('home_page') }}" class="brand-logo">La Mexicana</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
+                    <!-- Visible to all users -->
                     <li><a href="{{ url_for('home_page') }}">Home</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-                    <li><a href="#">Add Recipe</a></li>
-                    <li><a href="#l">Categories</a></li>
-                    <li><a href="#">Log Out</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <!-- Visible to logged in users -->
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="#">Add Recipe</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <!-- End of links visible to logged in users -->
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                     <!-- End of links visible to all users -->
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -40,14 +47,21 @@
             <li>
                 <h4 class="brand-logo center-align">La Mexicana</h4>
             </li>
-            <li><a href="{{ url_for('home_page') }}">Home</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-            <li><a href="#">Add Recipe</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+                                <!-- Visible to all users -->
+                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+                    <!-- Visible to logged in users -->
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="#">Add Recipe</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <!-- End of links visible to logged in users -->
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                     <!-- End of links visible to all users -->
+                    {% endif %}
         </ul>
 
 
