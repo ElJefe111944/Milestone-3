@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row full-recipe">
+        <div class="col s12">
+            <h3 class="center">{{ user.username }}'s Profile</h3>
+        </div>
+        <div class="col s12 m6"> <img src="{{ user.profile_image }}" alt="{{ user.profile_image }}"
+                class="responsive-img">
+        </div>
+        <div class="col s12 m6">
+        </div>
+        <div class="card-content">
+            <p class="recipe-text"><em>About Me:</em> <br><br>{{ user.about }}</p><br>
+            <p class="recipe-text"><em>My Recipies:</em> <br><br><br>
+                <br></p>
+            <br>       
+
+        </div>
+    </div>
+    
+{% endblock %}

@@ -84,7 +84,8 @@ def register():
             
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
+            "password": generate_password_hash(
+                request.form.get("password")),
             "profile_image": request.form.get("profile_image"),
             "about": request.form.get("about")
         }
@@ -94,6 +95,7 @@ def register():
         session["users"] = request.form.get("username").lower()
         # flash message confiriming registration successful
         flash("Registration Successful")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -111,7 +113,10 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     # Session variable with User cookie
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}!".format(request.form.get("username")))
+                    flash("Welcome, {}!".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
             else:
                 # Password does not match
                 flash("Incorrect Username or Password")
@@ -122,6 +127,21 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+    # Profile
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # Get the sessions user's username from database
+    user = mongo.db.users.find_one({"username": username.lower()})
+    recipes = list(mongo.db.recipes.find({"created_by": username.lower()}))
+
+    if "user" in session:
+        return render_template("profile.html", user=user, recipes=recipes)
+
+    return redirect(url_for("login"))
+
+
+
 
 
 if __name__ == "__main__":
