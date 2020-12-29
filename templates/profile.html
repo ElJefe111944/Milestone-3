@@ -5,18 +5,31 @@
         <div class="col s12">
             <h3 class="center">{{ user.username }}'s Profile</h3>
         </div>
-        <div class="col s12 m6"> <img src="{{ user.profile_image }}" alt="{{ user.profile_image }}"
-                class="responsive-img">
+        <div class="col s12 m6"> <img src="{{ user.profile_image }}" alt="{{ user.profile_image }}" class="responsive-img">
         </div>
         <div class="col s12 m6">
         </div>
         <div class="card-content">
             <p class="recipe-text"><em>About Me:</em> <br><br>{{ user.about }}</p><br>
-            <p class="recipe-text"><em>My Recipies:</em> <br><br><br>
-                <br></p>
-            <br>       
-
+                <div class="col s12 m12 center-align">
+            <p class="recipe-text"><em>My Recipies:</em></p>
+            <!-- Collapsible Recipe List -->
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header center-align"><i class="fas fa-chevron-down"></i>Recipe Name</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fas fa-chevron-down"></i></div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fas fa-chevron-down"></i></div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+            </ul>
         </div>
+        </div>    
     </div>
     
 {% endblock %}

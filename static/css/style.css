@@ -60,7 +60,7 @@ nav .brand-logo {
 .row.flashes.s12 {
     position: absolute;
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.0);
    
 }
 
@@ -228,6 +228,10 @@ i.fas.fa-undo-alt {
 
 .input-field .prefix {    
     width: 0rem;
+}
+
+.col.s12.login-link {
+    padding-top: 15px;
 }
 
 .btn, .btn-large, .btn-small {
