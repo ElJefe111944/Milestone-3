@@ -11,25 +11,22 @@
         </div>
         <div class="card-content">
             <p class="recipe-text"><em>About Me:</em> <br><br>{{ user.about }}</p><br>
-                <div class="col s12 m12 center-align">
-            <p class="recipe-text"><em>My Recipies:</em></p>
-            <!-- Collapsible Recipe List -->
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header center-align"><i class="fas fa-chevron-down"></i>Recipe Name</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="fas fa-chevron-down"></i></div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="fas fa-chevron-down"></i></div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-            </ul>
+            <div class="col s12 m12 center-align">
+                <p class="recipe-text"><em>My Recipies:</em></p>
+                <!-- Collapsible Recipe List -->
+                {% for recipe in recipes %}
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header center-align"><i class="fas fa-chevron-down"></i>{{ recipe.recipe_name }}</div>
+                        <div class="collapsible-body">
+                            <span><em>Cateory:&nbsp; </em>{{ recipe.category_name }}</span><br>
+                            <span><em>Description:&nbsp; </em>{{ recipe.recipe_description }}.</span><br><br>
+                            <a class="waves-effect waves-light btn" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><i class="material-icons"></i>See Recipe</a></div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
         </div>
-        </div>    
     </div>
     
 {% endblock %}
