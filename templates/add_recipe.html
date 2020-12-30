@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <div id="bg4">
+        <div class="wrapper">            
+            <div class="row card-panel add-recipe">
+                <h5 class="center white-text">Add Recipe</h5>
+                <!--- Add Recipe form from materialize --->
+                <form action="" method="POST" class="s12">
+                    <!-- Recipe Name -->
+                    <div class="row">
+                        <div class="input-field col s12 add-recipe-input">
+                            <i class="fas fa-pepper-hot prefix white-text"></i>
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate white-text" 
+                            minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
+                            <label for="recipe_name">Recipe Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Recipe Image -->
+                        <div class="input-field col s12 add-recipe-input">
+                            <i class="fas fa-file-image prefix white-text"></i>
+                            <input id="profile_image" name="profile_image" type="url" pattern="https?://.+"
+                                class="validate" required>
+                            <label for="profile_image">Profile Image</label>
+                        </div>
+                    </div>
+                    <!-- Ingredients  -->
+                    <div class="row">
+                        <div class="input-field col s12 add-recipe-input">
+                            <i class="fas fa-list prefix white-text"></i>
+                            <textarea id="ingredients" type="text" name="ingredients" data-length="120" class="materialize-textarea"></textarea>
+                            <label for="ingredients">List Of Ingredients</label>
+                        </div>
+                    </div>
+                    <!--- Method Step 1 --->
+                    <div class="row">
+                        <div class="input-field col m6 s12 add-recipe-input">
+                            <i class="fas fa-bread-slice prefix white-text"></i>
+                            <textarea id="method_step1" type="text" name="method_step1" data-length="150"
+                                class="materialize-textarea"></textarea>
+                            <label for="method_step1">Method Step One</label>
+                        </div>                  
+                    <!--- Method Step 2 --->                   
+                        <div class="input-field col s12 m6 add-recipe-input">
+                            <i class="fas fa-drumstick-bite prefix white-text"></i>
+                            <textarea id="method_step2" type="text" name="method_step2" data-length="120"
+                                class="materialize-textarea"></textarea>
+                            <label for="method_step2">Method Step Two</label>
+                        </div>
+                    </div>
+                    <!-- Category Name -->
+                    <div class="input-field col m6 s12">
+                        <select>
+                            <option value="" disabled selected>Choose a Category</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Category</label>
+                    </div>
+                    <!-- Preparation Time -->
+                    <div class="input-field col m6 s12">
+                        <select>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Select</label>
+                    </div>
+                    <!--- Register Btn --->
+                    <div class="row">
+                        <button class="btn waves-effect waves-light col s12" type="submit" name="action">Add Recipe
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</body>
+
+    
+{% endblock %}
+

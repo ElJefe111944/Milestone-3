@@ -257,3 +257,22 @@ i.fas.fa-undo-alt {
 .col.s12.register-link {
     padding-top: 15px;
 }
+
+/*-- Add Recipe Page --*/
+
+#bg4 {
+    background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center center;
+}
+
+.row.card-panel.add-recipe {
+    width: 80%;
+}
+
+.input-field.col.s12.add-recipe-input {
+    margin-bottom: 0rem;
+    margin-top: 0.5rem;
+}

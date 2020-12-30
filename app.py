@@ -148,6 +148,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+# Add a new recipe
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 
 
