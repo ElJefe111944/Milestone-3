@@ -21,7 +21,8 @@
                         <div class="collapsible-body">
                             <span><em>Cateory:&nbsp; </em>{{ recipe.category_name }}</span><br>
                             <span><em>Description:&nbsp; </em>{{ recipe.recipe_description }}.</span><br><br>
-                            <a class="waves-effect waves-light btn" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><i class="material-icons"></i>See Recipe</a></div>
+                            <a class="waves-effect waves-light btn tooltipped" data-position="top" data-tooltip="See Complete Recipe"
+                            href="{{ url_for('recipe', recipe_id=recipe._id) }}"><i class="material-icons"></i>Recipe</a></div>
                     </li>
                 {% endfor %}
                 </ul>
