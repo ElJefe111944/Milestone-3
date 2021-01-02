@@ -12,7 +12,8 @@
                     <div class="row">
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-pepper-hot prefix white-text"></i>
-                            <input id="recipe_name" name="recipe_name" type="text" class="validate white-text" 
+                            <input id="recipe_name" name="recipe_name" type="text" 
+                            class="validate white-text" 
                             minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
                             <label for="recipe_name">Recipe Name</label>
                         </div>
@@ -21,16 +22,17 @@
                         <!-- Recipe Image -->
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-file-image prefix white-text"></i>
-                            <input id="profile_image" name="profile_image" type="url" pattern="https?://.+"
-                                class="validate" required>
-                            <label for="profile_image">Profile Image</label>
+                            <input id="recipe_image" name="recipe_image" type="url" 
+                            pattern="https?://.+" class="validate" required>
+                            <label for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
                     <!-- Ingredients  -->
                     <div class="row">
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-list prefix white-text"></i>
-                            <textarea id="ingredients" type="text" name="ingredients" data-length="120" class="materialize-textarea"></textarea>
+                            <textarea id="ingredients" type="text" name="ingredients" 
+                            data-length="120" class="materialize-textarea"></textarea>
                             <label for="ingredients">List Of Ingredients</label>
                         </div>
                     </div>
@@ -64,13 +66,34 @@
                     <div class="input-field col m6 s12">
                         <select>
                             <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option value="1">10 minutes</option>
+                            <option value="2">30 minutes</option>
+                            <option value="3">1 hour</option>
                         </select>
-                        <label>Materialize Select</label>
+                        <label>Preparation Time</label>
                     </div>
-                    <!--- Register Btn --->
+                    <!-- Difficulty -->
+                    <div class="row">
+                        <p class="col s4 m4 center-align">
+                            <label>
+                                <input name="difficulty" type="radio" checked />
+                                <span>Easy</span>
+                            </label>
+                        </p>
+                        <p class="col s4 m4 center-align">
+                            <label>
+                                <input name="difficulty" type="radio" />
+                                <span>Medium</span>
+                            </label>
+                        </p>
+                        <p class="col s4 m4 center-align">
+                            <label>
+                                <input name="difficulty" type="radio" />
+                                <span>Hard</span>
+                            </label>
+                        </p>
+                    </div>
+                   <!--- Register Btn --->
                     <div class="row">
                         <button class="btn waves-effect waves-light col s12" type="submit" name="action">Add Recipe
                             <i class="fas fa-plus"></i>
