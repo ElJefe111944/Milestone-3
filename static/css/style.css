@@ -269,7 +269,7 @@ i.fas.fa-undo-alt {
 }
 
 .row.card-panel.add-recipe {
-    width: 80%;
+    width: 90%;
     top: 6%;
     padding: 5px;
 }
@@ -286,3 +286,9 @@ i.fas.fa-undo-alt {
 .dropdown-content {
     background-color: rgba(0,0,0,0.9);
 }
+
+.select-dropdown li.disabled, .select-dropdown li.disabled>span, .select-dropdown li.optgroup {
+    color: #fafafa;
+    background-color: transparent;
+}
+

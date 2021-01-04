@@ -10,17 +10,15 @@
                 <form action="{{ url_for('add_recipe') }}" method="POST" class="s12">
                     <!-- Recipe Name -->
                     <div class="row">
-                        <div class="input-field col s12 add-recipe-input">
+                        <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-pepper-hot prefix white-text"></i>
                             <input id="recipe_name" name="recipe_name" type="text" 
                             class="validate white-text" 
                             minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
                             <label for="recipe_name">Recipe Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
+                        </div>                  
                         <!-- Recipe Image -->
-                        <div class="input-field col s12 add-recipe-input">
+                        <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-file-image prefix white-text"></i>
                             <input id="recipe_image" name="recipe_image" type="url" 
                             pattern="https?://.+" class="validate" required>
@@ -30,10 +28,10 @@
                     <!-- Recipe Description -->
                     <div class="row">
                         <div class="input-field col s12 add-recipe-input">
-                            <i class="fas fa-list prefix white-text"></i>
-                            <textarea id="ingredients" type="text" name="ingredients" data-length="120"
-                                class="materialize-textarea"></textarea>
-                            <label for="ingredients">List Of Ingredients</label>
+                            <i class="fas fa-pencil-alt prefix white-text"></i>
+                            <textarea id="recipe_description" type="text" name="recipe_description" data-length="150"
+                                class="materialize-textarea validate"></textarea>
+                            <label for="recipe_description">Recipe Description</label>
                         </div>
                     </div>
                     <!-- Ingredients  -->
@@ -41,7 +39,7 @@
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-list prefix white-text"></i>
                             <textarea id="ingredients" type="text" name="ingredients" 
-                            data-length="120" class="materialize-textarea"></textarea>
+                            data-length="120" class="materialize-textarea validate"></textarea>
                             <label for="ingredients">List Of Ingredients</label>
                         </div>
                     </div>
@@ -50,14 +48,14 @@
                         <div class="input-field col m6 s12 add-recipe-input">
                             <i class="fas fa-bread-slice prefix white-text"></i>
                             <textarea id="method_step1" type="text" name="method_step1" data-length="150"
-                                class="materialize-textarea"></textarea>
+                                class="materialize-textarea validate"></textarea>
                             <label for="method_step1">Method Step One</label>
                         </div>                  
                     <!--- Method Step 2 --->                   
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-drumstick-bite prefix white-text"></i>
                             <textarea id="method_step2" type="text" name="method_step2" data-length="120"
-                                class="materialize-textarea"></textarea>
+                                class="materialize-textarea validate"></textarea>
                             <label for="method_step2">Method Step Two</label>
                         </div>
                     </div>
@@ -75,7 +73,7 @@
                     <!-- Preparation Time -->
                     <div class="input-field col m6 s12">
                         <i class="fas fa-clock prefix white-text"></i>
-                        <select id="preparation_time" name="preparation_time" class="validate" required>
+                        <select id="preparation_time" name="preparation_time" class="validate">
                             <option value="" disabled selected>Choose your option</option>
                             <option value="10 minutes">10 minutes</option>
                             <option value="30 minutes">30 minutes</option>
