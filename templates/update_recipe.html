@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <div id="bg5">
+        <div class="wrapper">            
+            <div class="row card-panel add-recipe">
+                <h5 class="center white-text">Update Recipe</h5>
+                <!--- Add Recipe form from materialize --->
+                <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="s12">
+                    <!-- Recipe Name -->
+                    <div class="row">
+                        <div class="input-field col s12 m6 add-recipe-input">
+                            <i class="fas fa-pepper-hot prefix white-text"></i>
+                            <input id="recipe_name" name="recipe_name" type="text" 
+                            class="validate white-text" 
+                            minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
+                            <label for="recipe_name">Recipe Name</label>
+                        </div>                  
+                        <!-- Recipe Image -->
+                        <div class="input-field col s12 m6 add-recipe-input">
+                            <i class="fas fa-file-image prefix white-text"></i>
+                            <input id="recipe_image" name="recipe_image" type="url" 
+                            pattern="https?://.+" class="validate" required>
+                            <label for="recipe_image">Recipe Image</label>
+                        </div>
+                    </div>
+                    <!-- Recipe Description -->
+                    <div class="row">
+                        <div class="input-field col s12 add-recipe-input">
+                            <i class="fas fa-pencil-alt prefix white-text"></i>
+                            <textarea id="recipe_description" type="text" name="recipe_description" data-length="150"
+                                class="materialize-textarea validate"></textarea>
+                            <label for="recipe_description">Recipe Description</label>
+                        </div>
+                    </div>
+                    <!-- Ingredients  -->
+                    <div class="row">
+                        <div class="input-field col s12 add-recipe-input">
+                            <i class="fas fa-list prefix white-text"></i>
+                            <textarea id="ingredients" type="text" name="ingredients" 
+                            data-length="120" class="materialize-textarea validate"></textarea>
+                            <label for="ingredients">List Of Ingredients</label>
+                        </div>
+                    </div>
+                    <!--- Method Step 1 --->
+                    <div class="row">
+                        <div class="input-field col m6 s12 add-recipe-input">
+                            <i class="fas fa-bread-slice prefix white-text"></i>
+                            <textarea id="method_step1" type="text" name="method_step1" data-length="150"
+                                class="materialize-textarea validate"></textarea>
+                            <label for="method_step1">Method Step One</label>
+                        </div>                  
+                    <!--- Method Step 2 --->                   
+                        <div class="input-field col s12 m6 add-recipe-input">
+                            <i class="fas fa-drumstick-bite prefix white-text"></i>
+                            <textarea id="method_step2" type="text" name="method_step2" data-length="120"
+                                class="materialize-textarea validate"></textarea>
+                            <label for="method_step2">Method Step Two</label>
+                        </div>
+                    </div>
+                    <!-- Category Name -->
+                    <div class="input-field col m6 s12">
+                        <i class="fas fa-folder-open prefix white-text"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" disabled selected>Choose a Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label>Category</label>
+                    </div>
+                    <!-- Preparation Time -->
+                    <div class="input-field col m6 s12">
+                        <i class="fas fa-clock prefix white-text"></i>
+                        <select id="preparation_time" name="preparation_time" class="validate">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="10 minutes">10 minutes</option>
+                            <option value="30 minutes">30 minutes</option>
+                            <option value="1 hour">1 hour</option>
+                        </select>
+                        <label>Preparation Time</label>
+                    </div>
+                    <!-- Difficulty -->
+                    <div class="row">
+                        <p class="col s4 m4 center-align">
+                            <label>
+                                <input name="difficulty" type="radio" value="Easy" checked />
+                                <span>Easy</span>
+                            </label>
+                        </p>
+                        <p class="col s4 m4 center-align">
+                            <label>
+                                <input name="difficulty" type="radio" value="Medium" />
+                                <span>Medium</span>
+                            </label>
+                        </p>
+                        <p class="col s4 m4 center-align">
+                            <label>
+                                <input name="difficulty" type="radio" value="Hard" />
+                                <span>Hard</span>
+                            </label>
+                        </p>
+                    </div>
+                   <!--- Register Btn --->
+                    <div class="row">
+                        <button class="btn waves-effect waves-light col s12" type="submit">Update Recipe
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</body>    
+{% endblock %}
+

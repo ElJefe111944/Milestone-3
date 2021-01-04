@@ -173,6 +173,12 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
+# Update Recipe 
+@app.route("/update_recipe/<recipe_id>", methods=["GET", "POST"])
+def update_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("update_recipe.html", recipe=recipe, categories=categories)
 
 
 

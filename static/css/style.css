@@ -297,3 +297,13 @@ i.fas.fa-undo-alt {
     background-color: transparent;
 }
 
+/*-- Update Recipe  --*/
+
+#bg5 {
+    background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center center;
+}
+
