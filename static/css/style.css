@@ -207,6 +207,11 @@ i.fas.fa-undo-alt {
     margin-left: 0.5rem;
 }
 
+/*-- Proile Page --*/
+.collapsible-header i {
+    line-height: unset;
+}
+
 /*--- Registration Page ---*/
 #bg2 {
     background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg2.jpg);

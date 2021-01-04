@@ -17,7 +17,19 @@
                 {% for recipe in recipes %}
                 <ul class="collapsible">
                     <li>
-                        <div class="collapsible-header center-align"><i class="fas fa-chevron-down"></i>{{ recipe.recipe_name }}</div>
+                        <div class="collapsible-header left-align">                     
+                            <div class="col s3">
+                                 <i class="fas fa-chevron-down"></i> 
+                            </div>
+                            <!-- Recipe Name -->
+                            <div class="col s6">  
+                                 {{ recipe.recipe_name }}                                                
+                            </div>
+                            <!-- Update Btn -->   
+                            <div class="col s3">
+                                <a class="waves-effect waves-light btn-small">Update</a>
+                            </div>
+                        </div>
                         <div class="collapsible-body">
                             <span><em>Cateory:&nbsp; </em>{{ recipe.category_name }}</span><br>
                             <span><em>Description:&nbsp; </em>{{ recipe.recipe_description }}.</span><br><br>
