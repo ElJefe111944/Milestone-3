@@ -6,6 +6,9 @@
   box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
 
 body {    
    font-family: 'Playfair Display', serif;
@@ -303,7 +306,17 @@ i.fas.fa-undo-alt {
     background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 900px;
     background-position: center center;
 }
 
+.update_recipe {
+    font-size: 12px !important;
+    height: 2rem !important;
+}
+
+.row.card-panel.update-recipe-panel {
+    width: 95%;
+    top: 10%;
+    padding: 4px;
+}

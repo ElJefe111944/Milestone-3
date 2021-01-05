@@ -157,7 +157,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_image": request.form.get("recipe_image"),
             "recipe_description": request.form.get("recipe_description"),
-            "ingredients": request.form.get("ingredients"),
+            "ingredients_list": request.form.get("ingredients_list"),
             "method_step1": request.form.get("method_step1"),
             "method_step2": request.form.get("method_step2"),
             "category_name": request.form.get("category_name"),
