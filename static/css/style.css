@@ -272,13 +272,13 @@ i.fas.fa-undo-alt {
     background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 900px;
     background-position: center center;
 }
 
 .row.card-panel.add-recipe {
     width: 90%;
-    top: 6%;
+    top: 15%;
     padding: 5px;
 }
 
@@ -306,17 +306,17 @@ i.fas.fa-undo-alt {
     background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 900px;
+    height: 1200px;
     background-position: center center;
 }
 
 .update_recipe {
     font-size: 12px !important;
-    height: 2rem !important;
+  
 }
 
 .row.card-panel.update-recipe-panel {
     width: 95%;
-    top: 10%;
+    top: 6%;
     padding: 4px;
 }

@@ -4,7 +4,7 @@
 <body>
     <section>
     <div id="bg5">
-        <div class="wrapper" style="height: 900px;">            
+        <div class="wrapper" style="height: 1200px;">            
             <div class="row card-panel update-recipe-panel">
                 <h5 class="center white-text">Update Recipe</h5>
                 <!--- Update Recipe form from materialize --->
@@ -43,7 +43,7 @@
                             <i class="fas fa-list prefix white-text"></i>
                             <textarea id="ingredients_list" type="text" name="ingredients_list" 
                             data-length="120" class="materialize-textarea update_recipe validate">
-                                {{ recipe.ingredients_list }}
+                                {{- recipe.ingredients_list }}
                             </textarea>
                             <label for="ingredients_list">List Of Ingredients</label>
                         </div>
@@ -117,9 +117,17 @@
                     </div>
                    <!--- Register Btn --->
                     <div class="row">
-                        <button class="btn waves-effect waves-light col s12" type="submit">Update Recipe
-                            <i class="fas fa-edit"></i>
-                        </button>
+                        <div class="col s12 center-align">
+                            <!-- Cancel Updates btn -->
+                            <a class="waves-effect waves-light btn red darken-4" href="{{ url_for('get_recipes') }}">
+                                Cancel
+                                <i class="far fa-window-close white-text"></i>
+                            </a>
+                            <!-- Submit Updates btn -->
+                            <button class="btn waves-effect waves-light" type="submit">Update 
+                                  <i class="fas fa-edit"></i>
+                            </button>
+                        </div>                       
                     </div>
                 </form>
                
