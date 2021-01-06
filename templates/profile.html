@@ -25,8 +25,11 @@
                             <div class="col s6">  
                                  {{ recipe.recipe_name }}                                                
                             </div>
-                            <!-- Update Btn -->   
-                            <div class="col s3">                                
+                            <!-- Buttons -->   
+                            <div class="col s3"> 
+                                <!-- Delete Btn --> 
+                                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light red darken-4 btn-small">Delete</a> 
+                                <!-- Update Btn -->                              
                                 <a href="{{ url_for('update_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Update</a>
                             </div>
                         </div>
