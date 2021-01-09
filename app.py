@@ -95,7 +95,7 @@ def register():
         session["users"] = request.form.get("username").lower()
         # flash message confiriming registration successful
         flash("Registration Successful")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=session["users"]))    
     return render_template("register.html")
 
 
@@ -162,7 +162,16 @@ def edit_profile(username):
 
     return redirect(url_for("login"))
 
-    
+
+# Delete Profile
+@app.route("/delete_profile/<username>")
+def delete_profile(username):
+    mongo.db.users.remove({"username": username.lower()})
+    flash("Profile Successfully Deleted")
+    # remove the username from the session 
+    session.pop("user")
+
+    return redirect(url_for("register"))
 
 
 # Log out

@@ -24,13 +24,15 @@
                             <!-- Recipe Name -->
                             <div class="col s6">  
                                  {{ recipe.recipe_name }}                                                
-                            </div>
+                            </div>                           
                             <!-- Buttons -->   
                             <div class="col s3"> 
+                                {% if session.user|lower == recipe.created_by|lower %}
                                 <!-- Delete Btn --> 
-                                 <a href="#" class="waves-effect waves-light red darken-4 btn-small">Delete</a> 
+                                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light red darken-4 btn-small">Delete</a> 
                                 <!-- Update Btn -->                              
                                 <a href="{{ url_for('update_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Update</a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="collapsible-body">
@@ -45,7 +47,7 @@
             {% if session.user|lower == user.username|lower %}
             <div class="col s12 center-align">
                 <!-- Delete Profile Btn -->
-                <a href="" class="waves-effect waves-light red darken-4 btn-small">Delete Profile</a>
+                <a href="{{url_for('delete_profile', username=user.username|lower)}}" class="waves-effect waves-light red darken-4 btn-small">Delete Profile</a>
                 <!-- Edit Profile Btn -->
                 <a href="{{url_for('edit_profile', username=user.username|lower)}}" class="waves-effect waves-light btn-small">Edit Profile</a>
             </div>
