@@ -182,6 +182,19 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+# View all users on db
+@app.route("/all_users")
+def all_users():
+    users = list(mongo.db.users.find())
+
+    if "user" in session:
+        return render_template("all_users.html", users=users)
+
+    return redirect(url_for("login"))
+
+
+
 # Add a new recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():

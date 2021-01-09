@@ -5,7 +5,9 @@
         <div class="col s12">
             <h3 class="center">{{ user.username }}'s Profile</h3>
         </div>
-        <div class="col s12 m6"> <img src="{{ user.profile_image }}" alt="{{ user.profile_image }}" class="responsive-img">
+        <div class="row container">
+        <div class="col s12 m6"> <img src="{{ user.profile_image }}" alt="{{ user.profile_image }}" 
+            class="responsive-img" style="float: right;">
         </div>
         <div class="col s12 m6">
         </div>
@@ -13,7 +15,10 @@
             <p class="recipe-text"><em>About Me:</em> <br><br>{{ user.about }}</p><br>
             <div class="col s12 m12 center-align">
                 <p class="recipe-text"><em>My Recipies:</em></p>
+            </div>
                 <!-- Collapsible Recipe List -->
+        </div>
+        </div>
                 {% for recipe in recipes %}
                 <ul class="collapsible">
                     <li>
@@ -35,6 +40,9 @@
                                 {% endif %}
                             </div>
                         </div>
+                        </div>
+        
+        
                         <div class="collapsible-body">
                             <span><em>Cateory:&nbsp; </em>{{ recipe.category_name }}</span><br>
                             <span><em>Description:&nbsp; </em>{{ recipe.recipe_description }}.</span><br><br>
@@ -43,7 +51,8 @@
                     </li>
                 {% endfor %}
                 </ul>
-            </div>
+           
+            
             {% if session.user|lower == user.username|lower %}
             <div class="col s12 center-align">
                 <!-- Delete Profile Btn -->
