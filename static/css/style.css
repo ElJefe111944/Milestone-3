@@ -158,7 +158,9 @@ i.fas.fa-arrow-circle-right {
 }
 
 .card .card-image .card-title {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
+    top: 0;
+    right: 0;
 }
 
 card .card-action {
@@ -179,8 +181,9 @@ card .card-action {
 }
 
 .row.full-recipe {
-    margin-bottom: 0;  
-    padding: 20px;  
+    margin-bottom: 0; 
+    padding-bottom: 20px;
+      
 }
 
 p.recipe-text {
@@ -213,6 +216,11 @@ i.fas.fa-undo-alt {
 /*-- Proile Page --*/
 .collapsible-header i {
     line-height: unset;
+}
+
+.collapsible {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /*--- Registration Page ---*/
