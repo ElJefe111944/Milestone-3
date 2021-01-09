@@ -7,7 +7,7 @@
             <div class="row card-panel add-recipe">
                 <h5 class="center white-text">Add Recipe</h5>
                 <!--- Add Recipe form from materialize --->
-                <form action="{{ url_for('add_recipe') }}" method="POST" class="s12">
+                <form action="{{ url_for('add_recipe') }}" method="POST" class="s12" enctype="multipart/form-data">
                     <!-- Recipe Name -->
                     <div class="row">
                         <div class="input-field col s12 m6 add-recipe-input">
@@ -18,12 +18,27 @@
                             <label for="recipe_name">Recipe Name</label>
                         </div>                  
                         <!-- Recipe Image -->
+                       
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-file-image prefix white-text"></i>
                             <input id="recipe_image" name="recipe_image" type="url" 
                             pattern="https?://.+" class="validate" required>
                             <label for="recipe_image">Recipe Image</label>
                         </div>
+                        
+                        <!--
+                              <div class="file-field input-field col s12 m6 add-recipe-input">                            
+                            <div class="btn">
+                                <span><i class="fas fa-file-upload white-text"></i></span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">                                
+                                <input class="file-path validate" type="text" placeholder="Upload Recipe Image"
+                                id="recipe_image" name="recipe_image">                                
+                            </div>
+                        </div> 
+                        -->
+                     
                     </div>
                     <!-- Recipe Description -->
                     <div class="row">

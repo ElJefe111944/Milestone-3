@@ -300,6 +300,11 @@ i.fas.fa-undo-alt {
     background-color: transparent;
 }
 
+.file-field input.file-path {
+    width: 100%;
+    font-family: 'Playfair Display';
+}
+
 /*-- Update Recipe  --*/
 
 #bg5 {
@@ -319,4 +324,18 @@ i.fas.fa-undo-alt {
     width: 95%;
     top: 6%;
     padding: 4px;
+}
+
+/*-- Edit Profile ---*/
+
+#bg6 {
+    background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bk6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center center;
+}
+
+.row.card-panel.edit_panel {
+    width: 75%;
 }
