@@ -82,14 +82,15 @@ def register():
             # redirect user back to register form
             return redirect(url_for("register"))
             
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(
-                request.form.get("password")),
-            "profile_image": request.form.get("profile_image"),
-            "about": request.form.get("about")
-        }
-        mongo.db.users.insert_one(register)
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password")),
+                "profile_image": request.form.get("profile_image"),
+                "about": request.form.get("about")
+            }                  
+           
+            mongo.db.users.insert_one(register)
 
         # new user into session using session cookie
         session["users"] = request.form.get("username").lower()
