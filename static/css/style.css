@@ -25,6 +25,17 @@ a {
     color: cyan;
 }
 
+/*-- Preloader --*/
+#preloader {
+    background: #000000 url('../images/preloader.gif') no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    overflow: visible;
+    position: fixed;
+    z-index: 1111111111;
+}
+
+
 /*---- Main Nav bar ---*/
 nav.nav-extended {
     height: auto;    
