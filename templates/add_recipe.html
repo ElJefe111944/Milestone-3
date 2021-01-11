@@ -2,12 +2,18 @@
 {% block content %}
 
 <body>
+    <!-- Add Recipe Template -->
+    <!-- Landing Image Top -->
     <div id="bg7" style="height: 900px;">
         <div class="wrapper" style="height: 900px;">
+            <!-- Add Recipe Card Panel -->
             <div class="row card-panel add-recipe">
+                <!-- Title -->
                 <h5 class="center white-text">Add Recipe</h5>
                 <!--- Add Recipe form from materialize --->
-                <form action="{{ url_for('add_recipe') }}" method="POST" class="s12" enctype="multipart/form-data">
+                <form action="{{ url_for('add_recipe') }}" method="POST" class="s12">
+                    <!-- Input Fields -->
+                    <!-- Row 1 -->
                     <!-- Recipe Name -->
                     <div class="row">
                         <div class="input-field col s12 m6 add-recipe-input">
@@ -17,62 +23,57 @@
                             <label for="recipe_name">Recipe Name</label>
                         </div>
                         <!-- Recipe Image -->
-
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-file-image prefix white-text"></i>
                             <input id="recipe_image" name="recipe_image" type="url" pattern="https?://.+"
                                 class="validate" required>
                             <label for="recipe_image">Recipe Image</label>
-                        </div>
-
-                        <!--
-                              <div class="file-field input-field col s12 m6 add-recipe-input">                            
-                            <div class="btn">
-                                <span><i class="fas fa-file-upload white-text"></i></span>
-                                <input type="file">
-                            </div>
-                            <div class="file-path-wrapper">                                
-                                <input class="file-path validate" type="text" placeholder="Upload Recipe Image"
-                                id="recipe_image" name="recipe_image">                                
-                            </div>
-                        </div> 
-                        -->
-
+                        </div>      
+                    <!-- End of Row 1 -->       
                     </div>
+                    <!-- Row 2 -->
                     <!-- Recipe Description -->
                     <div class="row">
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-pencil-alt prefix white-text"></i>
-                            <textarea id="recipe_description" type="text" name="recipe_description" data-length="150"
+                            <textarea id="recipe_description" name="recipe_description" data-length="150"
                                 class="materialize-textarea validate"></textarea>
                             <label for="recipe_description">Recipe Description</label>
                         </div>
                     </div>
+                    <!-- End of Row 2 -->
+                    <!-- Row 3 -->
                     <!-- Ingredients  -->
                     <div class="row">
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-list prefix white-text"></i>
-                            <textarea id="ingredients_list" type="text" name="ingredients_list" data-length="120"
+                            <textarea id="ingredients_list" name="ingredients_list" data-length="120"
                                 class="materialize-textarea validate"></textarea>
                             <label for="ingredients_list">List Of Ingredients</label>
                         </div>
                     </div>
+                    <!-- End of Row 3 -->
+                    <!-- Row 4 -->
                     <!--- Method Step 1 --->
                     <div class="row">
                         <div class="input-field col m6 s12 add-recipe-input">
                             <i class="fas fa-bread-slice prefix white-text"></i>
-                            <textarea id="method_step1" type="text" name="method_step1" data-length="150"
+                            <textarea id="method_step1" name="method_step1" data-length="150"
                                 class="materialize-textarea validate"></textarea>
                             <label for="method_step1">Method Step One</label>
                         </div>
                         <!--- Method Step 2 --->
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-drumstick-bite prefix white-text"></i>
-                            <textarea id="method_step2" type="text" name="method_step2" data-length="120"
+                            <textarea id="method_step2" name="method_step2" data-length="120"
                                 class="materialize-textarea validate"></textarea>
                             <label for="method_step2">Method Step Two</label>
                         </div>
                     </div>
+                    <!-- End of Input Fields -->
+                    <!-- End of Row 4 -->
+                    <!-- Row 5 -->
+                    <!-- Dropdown Options -->
                     <!-- Category Name -->
                     <div class="input-field col m6 s12">
                         <i class="fas fa-folder-open prefix white-text"></i>
@@ -95,6 +96,9 @@
                         </select>
                         <label>Preparation Time</label>
                     </div>
+                    <!-- End of Dropdown Options -->
+                    <!-- End of Row 5 -->
+                    <!-- Radio btn -->
                     <!-- Difficulty -->
                     <div class="row">
                         <p class="col s4 m4 center-align">
@@ -115,17 +119,18 @@
                                 <span>Hard</span>
                             </label>
                         </p>
-                    </div>
-                    <!--- Register Btn --->
+                    </div><!-- End of Radio btn -->
+                    <!-- Register Btn -->
                     <div class="row">
                         <button class="btn waves-effect waves-light col s12" type="submit">Add Recipe
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </form>
-
+                <!-- End of Add Recipe form from materialize -->
             </div>
         </div>
     </div>
+     <!-- Landing Image Bottom -->
 </body>
 {% endblock %}

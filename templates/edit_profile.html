@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Edit Profile Template -->
 
 <body>
     <section>
+        <!-- Landing Image Top -->
         <div id="bg6">
             <div class="wrapper">
                 <div class="row card-panel edit_panel">
@@ -33,14 +35,14 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-user-edit prefix white-text"></i>
-                                <textarea id="about" type="text" name="about" maxlength="100" style="height: auto;"
+                                <textarea id="about" name="about" maxlength="100" style="height: auto;"
                                     class="materialize-textarea">
                                 {{- user.about }}
                             </textarea>
                                 <label for="about">About You <em>(Optional)</em></label>
                             </div>
                         </div>
-                        <!--- Password --->
+                        <!-- Password -->
                         <div class="row">
                             <div class="input-field valign-wrapper center-align col s12">
                                 <i class="fas fa-unlock-alt prefix white-text"></i>
@@ -51,16 +53,18 @@
                                 <label for="password">Password</label>
                             </div>
                         </div>
-                        <!--- Update Btn --->
+                        <!-- Update Btn -->
                         <div class="row">
                             <button class="btn waves-effect waves-light col s12" type="submit" name="action">Update
                                 <i class="fas fa-edit"></i>
                             </button>
                         </div>
                     </form>
-
+                    <!-- End of Update Profile form from materialize -->
                 </div>
             </div>
+        </div>
+        <!-- End of Landing Image Top -->
     </section>
 </body>
 

@@ -1,28 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-
 <body>
+    <!-- Landing Image Start -->
     <div id="bg">
         <div class="wrapper">
+            <!-- Landing Text -->
             <h2 class="center">Lorem ipsum dolor sit amet</h2>
+            <!-- Recipe Search Bar -->
             <div class="row card-panel recipe-search-bar">
+                <!-- Materialize form -->
                 <form action="{{ url_for('search') }}" method="POST" class="s12">
                     <div class="row valign-wrapper center-align">
                         <i class="fas fa-search prefix white-text"></i>
-                        <input type="search" name="search_recipe" id="search_recipe" placeholder="Search Recipe..."
+                        <input type="search" name="search_recipe" id="search_recipe" 
+                        placeholder="Search Recipe..."
                             minlength="3" class="validate searchBar" required>
                         <button type="submit" class="searchButton" name="action">Search</button>
                     </div>
+                    <!-- All Recipes Search Button -->
                     <div class="col center-align" style="float: none;">
-                        <a href="{{ url_for('get_recipes') }}" class="allRecipes">See all recipes<i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ url_for('get_recipes') }}" class="allRecipes">See all recipes
+                            <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
+                    <!-- End of All Recipes Search Button -->
                 </form>
             </div>
+            <!-- End Of Recipe Search Bar -->
         </div>
     </div>
-</body>
-
-    
+    <!-- End of Landing Image -->
+</body>    
 {% endblock %}
 

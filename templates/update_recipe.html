@@ -1,140 +1,163 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Update Recipe Template -->
 
 <body>
     <section>
-    <div id="bg5" style="height: 750px;">
-        <div class="wrapper update" style="height: 750px;">            
-            <div class="row card-panel update-recipe-panel">
-                <h5 class="center white-text">Update Recipe</h5>
-                <!--- Update Recipe form from materialize --->
-                <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="s12">
-                    <!-- Recipe Name -->
-                    <div class="row">
-                        <div class="input-field col s12 m6 add-recipe-input">
-                            <i class="fas fa-pepper-hot prefix white-text"></i>
-                            <input id="recipe_name" name="recipe_name" type="text" 
-                            class="validate white-text update_recipe" value="{{ recipe.recipe_name }}"
-                            minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
-                            <label for="recipe_name">Recipe Name</label>
-                        </div>                  
-                        <!-- Recipe Image -->
-                        <div class="input-field col s12 m6 add-recipe-input">
-                            <i class="fas fa-file-image prefix white-text"></i>
-                            <input id="recipe_image" name="recipe_image" type="url" 
-                            pattern="https?://.+" class="validate update_recipe" value="{{ recipe.recipe_image }}" required>
-                            <label for="recipe_image">Recipe Image</label>
+        <!-- Landing Image Top -->
+        <div id="bg5" style="height: 750px;">
+            <div class="wrapper update" style="height: 750px;">
+                <!-- Add Recipe Card Panel -->
+                <div class="row card-panel update-recipe-panel">
+                    <!-- Title -->
+                    <h5 class="center white-text">Update Recipe</h5>
+                    <!-- Update Recipe form from materialize -->
+                    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="s12">
+                        <!-- Input Fields -->
+                        <!-- Row 1 -->
+                        <!-- Recipe Name -->
+                        <div class="row">
+                            <div class="input-field col s12 m6 add-recipe-input">
+                                <i class="fas fa-pepper-hot prefix white-text"></i>
+                                <input id="recipe_name" name="recipe_name" type="text"
+                                    class="validate white-text update_recipe" value="{{ recipe.recipe_name }}"
+                                    minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
+                                <label for="recipe_name">Recipe Name</label>
+                            </div>
+                            <!-- Recipe Image -->
+                            <div class="input-field col s12 m6 add-recipe-input">
+                                <i class="fas fa-file-image prefix white-text"></i>
+                                <input id="recipe_image" name="recipe_image" type="url" pattern="https?://.+"
+                                    class="validate update_recipe" value="{{ recipe.recipe_image }}" required>
+                                <label for="recipe_image">Recipe Image</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Recipe Description -->
-                    <div class="row">
-                        <div class="input-field col s12 add-recipe-input">
-                            <i class="fas fa-pencil-alt prefix white-text"></i>
-                            <textarea id="recipe_description" type="text" name="recipe_description" data-length="150"
-                                class="materialize-textarea validate update_recipe">
+                        <!-- End of Row 1 -->
+                        <!-- Row 2 -->
+                        <!-- Recipe Description -->
+                        <div class="row">
+                            <div class="input-field col s12 add-recipe-input">
+                                <i class="fas fa-pencil-alt prefix white-text"></i>
+                                <textarea id="recipe_description" name="recipe_description"
+                                    data-length="150" class="materialize-textarea validate update_recipe">
                                 {{- recipe.recipe_description }}
                             </textarea>
-                            <label for="recipe_description">Recipe Description</label>
+                                <label for="recipe_description">Recipe Description</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Ingredients  -->
-                    <div class="row">
-                        <div class="input-field col s12 add-recipe-input">
-                            <i class="fas fa-list prefix white-text"></i>
-                            <textarea id="ingredients_list" type="text" name="ingredients_list" 
-                            data-length="120" class="materialize-textarea update_recipe validate">
+                        <!-- End of Row 2 -->
+                        <!-- Row 3 -->
+                        <!-- Ingredients  -->
+                        <div class="row">
+                            <div class="input-field col s12 add-recipe-input">
+                                <i class="fas fa-list prefix white-text"></i>
+                                <textarea id="ingredients_list" name="ingredients_list" data-length="120"
+                                    class="materialize-textarea update_recipe validate">
                                 {{- recipe.ingredients_list }}
                             </textarea>
-                            <label for="ingredients_list">List Of Ingredients</label>
+                                <label for="ingredients_list">List Of Ingredients</label>
+                            </div>
                         </div>
-                    </div>
-                    <!--- Method Step 1 --->
-                    <div class="row">
-                        <div class="input-field col m12 s12 add-recipe-input">
-                            <i class="fas fa-bread-slice prefix white-text"></i>
-                            <textarea id="method_step1" type="text" name="method_step1" data-length="150"
-                                class="materialize-textarea update_recipe validate">
+                        <!-- End of Row 3 -->
+                        <!-- Row 4 -->
+                        <!--- Method Step 1 --->
+                        <div class="row">
+                            <div class="input-field col m12 s12 add-recipe-input">
+                                <i class="fas fa-bread-slice prefix white-text"></i>
+                                <textarea id="method_step1" name="method_step1" data-length="150"
+                                    class="materialize-textarea update_recipe validate">
                                 {{- recipe.method_step1 }}
                             </textarea>
-                            <label for="method_step1">Method Step One</label>
-                        </div>                  
-                    <!--- Method Step 2 --->                   
-                        <div class="input-field col s12 m12 add-recipe-input">
-                            <i class="fas fa-drumstick-bite prefix white-text"></i>
-                            <textarea id="method_step2" type="text" name="method_step2" data-length="120"
-                                class="materialize-textarea update_recipe validate">
+                                <label for="method_step1">Method Step One</label>
+                            </div>
+                            <!-- Method Step 2 -->
+                            <div class="input-field col s12 m12 add-recipe-input">
+                                <i class="fas fa-drumstick-bite prefix white-text"></i>
+                                <textarea id="method_step2" name="method_step2" data-length="120"
+                                    class="materialize-textarea update_recipe validate">
                                 {{- recipe.method_step2 }}
                             </textarea>
-                            <label for="method_step2">Method Step Two</label>
+                                <label for="method_step2">Method Step Two</label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Category Name -->
-                    <div class="input-field col m6 s12">
-                        <i class="fas fa-folder-open prefix white-text"></i>
-                        <select id="category_name" name="category_name" class="validate" required>
-                            <option value="" disabled>Choose a Category</option>
-                            {% for category in categories %}
+                        <!-- End of Input Fields -->
+                        <!-- End of Row 4 -->
+                        <!-- Row 5 -->
+                        <!-- Dropdown Options -->
+                        <!-- Category Name -->
+                        <div class="input-field col m6 s12">
+                            <i class="fas fa-folder-open prefix white-text"></i>
+                            <select id="category_name" name="category_name" class="validate" required>
+                                <option value="" disabled>Choose a Category</option>
+                                {% for category in categories %}
                                 {% if category.category_name == recipe.category_name %}
-                                 <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}
+                                </option>
                                 {% else %}
                                 <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                                 {% endif %}
-                            {% endfor %}
-                        </select>
-                        <label>Category</label>
-                    </div>
-                    <!-- Preparation Time -->
-                    <div class="input-field col m6 s12">
-                        <i class="fas fa-clock prefix white-text"></i>
-                        <select id="preparation_time" name="preparation_time" class="validate">
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="10 minutes">10 minutes</option>
-                            <option value="30 minutes">30 minutes</option>
-                            <option value="1 hour">1 hour</option>
-                        </select>
-                        <label>Preparation Time</label>
-                    </div>
-                    <!-- Difficulty -->
-                    <div class="row">
-                        <p class="col s4 m4 center-align">
-                            <label>
-                                <input name="difficulty" type="radio" value="Easy" checked />
-                                <span>Easy</span>
-                            </label>
-                        </p>
-                        <p class="col s4 m4 center-align">
-                            <label>
-                                <input name="difficulty" type="radio" value="Medium" />
-                                <span>Medium</span>
-                            </label>
-                        </p>
-                        <p class="col s4 m4 center-align">
-                            <label>
-                                <input name="difficulty" type="radio" value="Hard" />
-                                <span>Hard</span>
-                            </label>
-                        </p>
-                    </div>
-                   <!--- Register Btn --->
-                    <div class="row">
-                        <div class="col s12 center-align">
-                            <!-- Cancel Updates btn -->
-                            <a class="waves-effect waves-light btn red darken-4" href="{{ url_for('get_recipes') }}">
-                                Cancel
-                                <i class="far fa-window-close white-text"></i>
-                            </a>
-                            <!-- Submit Updates btn -->
-                            <button class="btn waves-effect waves-light" type="submit">Update 
-                                  <i class="fas fa-edit"></i>
-                            </button>
-                        </div>                       
-                    </div>
-                </form>
-               
+                                {% endfor %}
+                            </select>
+                            <label>Category</label>
+                        </div>
+                        <!-- Preparation Time -->
+                        <div class="input-field col m6 s12">
+                            <i class="fas fa-clock prefix white-text"></i>
+                            <select id="preparation_time" name="preparation_time" class="validate">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="10 minutes">10 minutes</option>
+                                <option value="30 minutes">30 minutes</option>
+                                <option value="1 hour">1 hour</option>
+                            </select>
+                            <label>Preparation Time</label>
+                        </div>
+                        <!-- End of Dropdown Options -->
+                        <!-- End of Row 5 -->
+                        <!-- Radio btn -->
+                        <!-- Difficulty -->
+                        <div class="row">
+                            <p class="col s4 m4 center-align">
+                                <label>
+                                    <input name="difficulty" type="radio" value="Easy" checked />
+                                    <span>Easy</span>
+                                </label>
+                            </p>
+                            <p class="col s4 m4 center-align">
+                                <label>
+                                    <input name="difficulty" type="radio" value="Medium" />
+                                    <span>Medium</span>
+                                </label>
+                            </p>
+                            <p class="col s4 m4 center-align">
+                                <label>
+                                    <input name="difficulty" type="radio" value="Hard" />
+                                    <span>Hard</span>
+                                </label>
+                            </p>
+                        </div>
+                        <!-- End of Radio btn -->
+                        <!--- Register Btn --->
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <!-- Cancel Updates btn -->
+                                <a class="waves-effect waves-light btn red darken-4"
+                                    href="{{ url_for('get_recipes') }}">
+                                    Cancel
+                                    <i class="far fa-window-close white-text"></i>
+                                </a>
+                                <!-- Submit Updates btn -->
+                                <button class="btn waves-effect waves-light" type="submit">Update
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End of Update Recipe form from materialize -->
+                </div>
             </div>
         </div>
-    </div>
     </section>
-</body>    
+    <!-- Landing Image Bottom -->
+</body>
 {% endblock %}
 

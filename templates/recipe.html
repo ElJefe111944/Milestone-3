@@ -1,30 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Full Recipe Page -->
 <div class="row full-recipe">
+    <!-- Recipe Title -->
     <div class="col s12">
         <h3 class="center">{{ recipe.recipe_name }}</h3>
     </div>
-
+    <!-- Recipe Information -->
+    <!-- Recipe Image -->
     <div class="row container">
         <div class="col s12 m6" style="float: right;"> <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_image }}"
                 class="responsive-img">
         </div>
+        <!-- Recipe Ingredients -->
         <div class="card-content col s12 m6">
             <p class="recipe-text"><em>Ingredients:</em> <br><br>{{ recipe.ingredients_list }}</p><br>
         </div>
+        <!-- Method -->
         <div class="card-content col s12 m12" style="text-align: justify;">
 
             <p class="recipe-text"><em>Method:</em> <br><br>{{ recipe.method_step1 }}<br>
                 <br>{{ recipe.method_step2 }}</p>
             <br>
+            <!-- Preparation Time -->
             <p class="recipe-text"><em>Preparation time: {{ recipe.preparation_time }}</em></p><br>
+            <!-- Recipe Creator -->
             <p class="recipe-text"><em>Created by: {{ recipe.created_by }}</em></p>
         </div>
         </div>
+        <!-- End of Recipe Information -->
+        <!-- Return to All Recipes Btn -->
         <div class="card-action return-btn col s12">
             <a href="{{ url_for('get_recipes') }}" class="waves-effect btn">Return</a>
         </div>
     </div>
+    <!-- End of Full Recipe Page -->
 
    
     

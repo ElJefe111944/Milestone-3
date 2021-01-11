@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Add New Category Template -->
 <body>
+    <!-- Landing Image Start -->
     <div id="bg4">
         <div class="wrapper">
             <div class="row card-panel add-category">
                 <h5 class="center white-text">Add Category</h5>
-                <!--- Add category form from materialize --->
+                <!-- Add category form from materialize -->
                 <form action="{{ url_for('add_category') }}" method="POST" class="s12" enctype="multipart/form-data">
                     <!-- Add Category Name -->
                     <div class="row">
@@ -17,16 +18,17 @@
                             <label for="category_name">Category Name</label>
                         </div>
                     </div>                        
-                    <!--- Submit Btn --->
+                    <!-- Submit Btn -->
                     <div class="row center-align">
                         <button class="btn waves-effect waves-light col s4" type="submit">Add Category
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </form>
-
+                <!-- End of Add category form from materialize -->
             </div>
         </div>
     </div>
+       <!-- End of  Landing Image Start -->
 </body>
 {% endblock %}

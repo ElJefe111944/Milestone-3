@@ -1,24 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- All Users Template Top -->
+<!-- Title -->
 <h3 class="center">All Users</h3>
 <div class="row">
  {% for user in users %}      
-
+    <!-- All Users preview cards -->
     <div class="col s12 m4 center-align">
+        <!-- Image Card From Materialize -->
       <div class="card">
+          <!-- User Image -->
         <div class="card-image">
           <img src="{{ user.profile_image }}" class="responsive-img">
+          <!-- UserName -->
           <span class="card-title">{{ user.username }}</span>
         </div>
+        <!-- End of User Image -->
+        <!-- Card Content -->
+        <!-- About User  -->
         <div class="card-content">
           <p>{{ user.about }}</p>
         </div>
+        <!-- End of Card Content -->
+        <!-- Got to User's Profile btn -->
         <div class="card-action">
           <a href="{{ url_for('profile', username=user.username|lower) }}" class="info-btn">See Profile</a>
         </div>
       </div>
+      <!-- End of Image Card From Materialize -->
     </div>
+    <!-- End of All Users preview cards -->
     {% endfor %}  
   </div>
+  <!-- All Users Template Bottom -->
 
 {% endblock %}

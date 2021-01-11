@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- User's Profile Page -->
 <div class="row full-recipe">
+    <!-- Profile Heading -->
     <div class="col s12">
         <h3 class="center">{{ user.username }}'s Profile</h3>
     </div>
+    <!-- End of Profile Heading -->
+    <!-- About User Section -->
     <div class="row container">
+        <!-- User Profile Image -->
         <div class="col s12 m6" style="float: right;">
             <img src="{{ user.profile_image }}" alt="{{ user.profile_image }}" class="responsive-img">
         </div>
+         <!-- End of User Profile Image -->
         <div class="card-content">
             <p class="recipe-text"><em>About Me:</em> <br><br>{{ user.about }}</p><br>
             <div class="col s12 m12 center-align">
                 <p class="recipe-text left-align"><em>My Recipies:</em></p>
             </div>
-            <!-- Collapsible Recipe List -->
+            <!-- End of About User Section -->            
         </div>
     </div>
+    <!-- Collapsible Recipe List -->
     {% for recipe in recipes %}
     <ul class="collapsible">
         <li>
@@ -28,7 +34,7 @@
                 <div class="col s5">
                     {{ recipe.recipe_name }}
                 </div>
-                <!-- Buttons -->
+                <!-- Recipe Update/Delete Buttons -->
                 <div class="col s5">
                     {% if session.user|lower == recipe.created_by|lower %}
                     <!-- Delete Btn -->
@@ -39,18 +45,23 @@
                         class="waves-effect waves-light btn-small">Update</a>
                     {% endif %}
                 </div>
+                <!-- End of Recipe Update/Delete Buttons -->
             </div>
-
+            <!-- Collapsible Body Content -->
+            <!-- Recipe Information -->
             <div class="collapsible-body center-align">
                 <span><em>Cateory:&nbsp; </em>{{ recipe.category_name }}</span><br>
                 <span><em>Description:&nbsp; </em>{{ recipe.recipe_description }}.</span><br><br>
+                <!-- Go to Recipe btn -->
                 <a class="waves-effect waves-light btn" href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                    <i class="material-icons"></i>Recipe</a>
+                    <i class="material-icons"></i>Recipe
+                </a>
             </div>
+             <!-- End of Collapsible Body Content -->
         </li>
         {% endfor %}
     </ul>
-
+    <!-- Manage Profile btns -->
     {% if session.user|lower == user.username|lower %}
     <div class="col s12 center-align" style="padding: 0 .75rem 2rem;">
         <!-- Delete Profile Btn -->
@@ -60,9 +71,8 @@
         <a href="{{url_for('edit_profile', username=user.username|lower)}}"
             class="waves-effect waves-light btn-small">Edit Profile</a>
     </div>
+    <!-- End of Manage Profile btns -->
 </div>
-
-
+<!-- End of User's Profile Page -->
 {% endif %}
-
 {% endblock %}
