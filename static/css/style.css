@@ -74,7 +74,7 @@ nav .brand-logo {
 .row.flashes.s12 {
     position: absolute;
     width: 100%;
-    background-color: rgba(0,0,0,0.0);
+    background-color: rgba(0,0,0,0.5);
    
 }
 
@@ -111,8 +111,8 @@ nav .brand-logo {
 }
 
 .row.card-panel.recipe-search-bar {
-    top: 35%;
-    padding: 25px;
+    top: 35%;   
+    padding: 20px;     
 }
 
 .fa-search {
@@ -186,6 +186,16 @@ card .card-action {
     font-weight: 900;
 }
 
+a.info-btn {
+    font-weight: 900;
+    color: #000000 !important;
+}
+
+a.info-btn:hover {    
+    color: rgb(12, 180, 180) !important;
+}
+
+
 /*--- Recipe.html ---*/
 .full-recipe {
     background-color: #f1ecec;
@@ -205,12 +215,13 @@ p.recipe-text {
     padding-top: 20px;   
 } 
 
-.return-btn a {    
+.return-btn a {
     font-family: bolder;
-    font-size: 25px;
+    font-size: 20px;
     text-transform: capitalize;
-} 
-
+    font-family: 'Playfair Display';
+    margin: 10px;
+}
 .recipe-text em {
     font-size: 20px;
 }
@@ -295,7 +306,7 @@ i.fas.fa-undo-alt {
 
 .row.card-panel.add-recipe {
     width: 90%;
-    top: 15%;
+    top: 10%;
     padding: 5px;
 }
 
@@ -341,6 +352,7 @@ i.fas.fa-undo-alt {
     width: 95%;
     top: 6%;
     padding: 4px;
+    position: unset !important;
 }
 
 /*-- Edit Profile ---*/
@@ -395,4 +407,94 @@ i.social-media:hover {
 
 button.btn.waves-effect.waves-light.col.s4 {
     float: none;
+}
+
+/*-- Media Query --*/
+
+@media screen and (max-width:769px){
+.row.card-panel.recipe-search-bar {
+    width: 80%;
+    padding: 5px;
+}
+.wrapper.update {
+    height: 800px !important;
+}
+div#bg5 {
+    height: 800px !important;
+}
+}
+
+
+@media screen and (max-width:600px){
+.row.card-panel.recipe-search-bar {
+    width: 80%;
+    padding: 5px;
+}
+.wrapper.update {
+    height: 1000px !important;
+}
+div#bg5 {
+    height: 1000px !important;
+}
+}
+
+@media screen and (max-width:481px){
+    a.brand-logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    }
+    p.recipe-text {    
+    font-size: 14px;
+}
+.recipe-text em {
+    font-size: 17px;
+}
+.return-btn a {
+    font-size: 16px;
+}
+a.waves-effect.waves-light.red.darken-4.btn-small {
+    margin-bottom: 0.2rem;
+}
+.row.card-panel.edit_panel {
+    width: 90%;
+}
+.wrapper.update {
+    height: 1100px !important;
+}
+div#bg5 {
+    height: 1100px !important;
+}
+.row.card-panel.login-form {
+    width: 90%;
+}
+}
+
+@media screen and (max-width:381px){
+
+.wrapper.update {
+    height: 1200px !important;
+}
+div#bg5 {
+    height: 1200px !important;
+}
+
+.card-panel {
+ width: 90%;
+}
+}
+
+@media screen and (max-width:320px){
+
+.wrapper.update {
+    height: 1400px !important;
+}
+div#bg5 {
+    height: 1400px !important;
+}
+.col.s5 {
+    font-size: 12px;
+}
+h3.center {
+    font-size: 1.5rem;
+}
 }

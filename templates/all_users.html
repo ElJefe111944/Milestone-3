@@ -14,7 +14,7 @@
           <p>{{ user.about }}</p>
         </div>
         <div class="card-action">
-          <a href="{{ url_for('profile', username=user.username|lower) }}">See Profile</a>
+          <a href="{{ url_for('profile', username=user.username|lower) }}" class="info-btn">See Profile</a>
         </div>
       </div>
     </div>
