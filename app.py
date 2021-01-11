@@ -30,23 +30,21 @@ def home_page():
     return render_template("index.html")
 
 
-
-# All recipes
+# all recipes
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
-# Individual recipe 
+# individual recipe
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=recipe)
 
 
-
-# Search Bar 
+# search bar 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     search_recipe = request.form.get("search_recipe")
@@ -54,28 +52,25 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
-# Registration 
+# registration 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method  == "POST":
-        # verify if the username already exists in datebase
+    if request.method == "POST": 
+        # Verify if the username already exists in datebase
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
         # flash message to show user already exists
         if existing_user:
             flash("Username already exists")
             # redirect user back to register form
-            return redirect(url_for("register"))
-            
+            return redirect(url_for("register"))      
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(
                 request.form.get("password")),
             "profile_image": request.form.get("profile_image"),
             "about": request.form.get("about")
-        }                 
-        
+        }         
         mongo.db.users.insert_one(register)
 
         # new user into session using session cookie
@@ -86,24 +81,23 @@ def register():
     return render_template("register.html")
 
 
-# User Log In
+# user Log In
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-         # verify if the username already exists in datebase
+        # verify if the username already exists in datebase
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # Hashed password matches user password input
+            # hashed password matches user password input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    # Session variable with User cookie
+                    existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}!".format(
-                        request.form.get("username")))
+                            request.form.get("username")))
                     return redirect(url_for(
-                        "profile", username=session["user"]))
+                            "profile", username=session["user"]))
             else:
                 # Password does not match
                 flash("Incorrect Username or Password")
@@ -114,6 +108,7 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
 
 # Profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -181,8 +176,8 @@ def all_users():
     return redirect(url_for("login"))
 
 
-
-# Add a new recipe
+# Recipe CRUD Funtionality
+# Add/Create a new recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -207,6 +202,7 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
+
 # Update Recipe 
 @app.route("/update_recipe/<recipe_id>", methods=["GET", "POST"])
 def update_recipe(recipe_id):
@@ -227,10 +223,11 @@ def update_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")      
 
-
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("update_recipe.html", recipe=recipe, categories=categories)
+    return render_template(
+        "update_recipe.html", recipe=recipe, categories=categories)
+
 
 # Delete Recipe
 @app.route("/delete_recipe/<recipe_id>")
@@ -241,7 +238,8 @@ def delete_recipe(recipe_id):
 
 """
 Categories CRUD Functionality
-"""    
+"""   
+
 
 # Categories
 @app.route("/get_categories")
@@ -263,6 +261,7 @@ def add_category():
 
     return render_template("add_category.html")
 
+
 # Edit Category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
@@ -276,6 +275,7 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+
 # Delete Category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
@@ -288,4 +288,4 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True) 
-        # change to False for submission
+# change to False for submission
