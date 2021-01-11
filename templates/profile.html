@@ -52,7 +52,7 @@
     </ul>
 
     {% if session.user|lower == user.username|lower %}
-    <div class="col s12 center-align">
+    <div class="col s12 center-align" style="padding: 0 .75rem 2rem;">
         <!-- Delete Profile Btn -->
         <a href="{{url_for('delete_profile', username=user.username|lower)}}"
             class="waves-effect waves-light red darken-4 btn-small">Delete Profile</a>

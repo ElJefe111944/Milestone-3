@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="center">Categories</h3>
+<div class="row">
+    <div class="col s12 center-align">
+        <a class="waves-effect waves-light btn-large" href="{{ url_for('add_category') }}">Add Category
+            <i class="material-icons right"></i>
+        </a>
+    </div>
+</div>
   <div class="row">
       {% for category in categories %}
     <div class="col s12 m6 center-align">

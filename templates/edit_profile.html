@@ -3,65 +3,66 @@
 
 <body>
     <section>
-    <div id="bg6">
-        <div class="wrapper">            
-            <div class="row card-panel edit_panel">
-                <h4 class="center white-text">Edit Profile</h4>
-                <!--- Update Profile form from materialize --->
-                <form action="{{ url_for('edit_profile', username=user.username|lower) }}" method="POST" class="s12">
-                    <!-- Username -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-user prefix white-text"></i>
-                            <input id="username" name="username" type="text" class="validate white-text" value="{{ user.username }}"
-                            minlength="3" maxlength="15" pattern="[a-zA-Z0-9]{3,15}" required>
-                            <label for="username">Username</label>
+        <div id="bg6">
+            <div class="wrapper">
+                <div class="row card-panel edit_panel">
+                    <h4 class="center white-text">Edit Profile</h4>
+                    <!--- Update Profile form from materialize --->
+                    <form action="{{ url_for('edit_profile', username=user.username|lower) }}" method="POST"
+                        class="s12">
+                        <!-- Username -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-user prefix white-text"></i>
+                                <input id="username" name="username" type="text" class="validate white-text"
+                                    value="{{ user.username }}" minlength="3" maxlength="15" pattern="[a-zA-Z0-9]{3,15}"
+                                    required>
+                                <label for="username">Username</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <!-- Profile Image -->
-                        <div class="input-field col s12">
-                            <i class="fas fa-file-image prefix white-text"></i>
-                            <input id="profile_image" name="profile_image" type="url" pattern="https?://.+" value="{{ user.profile_image }}"
-                                class="validate">
-                            <label for="profile_image">Profile Image <em>(Optional)</em></label>
+                        <div class="row">
+                            <!-- Profile Image -->
+                            <div class="input-field col s12">
+                                <i class="fas fa-file-image prefix white-text"></i>
+                                <input id="profile_image" name="profile_image" type="url" pattern="https?://.+"
+                                    value="{{ user.profile_image }}" class="validate">
+                                <label for="profile_image">Profile Image <em>(Optional)</em></label>
+                            </div>
                         </div>
-                    </div>
-                    <!-- About you  -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-user-edit prefix white-text"></i>
-                            <textarea id="about" type="text" name="about" maxlength="100" 
-                             style="height: auto;" class="materialize-textarea">
+                        <!-- About you  -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-user-edit prefix white-text"></i>
+                                <textarea id="about" type="text" name="about" maxlength="100" style="height: auto;"
+                                    class="materialize-textarea">
                                 {{- user.about }}
                             </textarea>
-                            <label for="about">About You <em>(Optional)</em></label>
+                                <label for="about">About You <em>(Optional)</em></label>
+                            </div>
                         </div>
-                    </div>
-                    <!--- Password --->
-                    <div class="row">
-                        <div class="input-field valign-wrapper center-align col s12">
-                            <i class="fas fa-unlock-alt prefix white-text"></i>
-                            <input id="password" name="password" type="password" class="validate" 
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
-                            <!-- Password must contain at least one number, Uppercase and lowercase letter -->
-                            <!-- Must be at least 6 characters or more -->
-                            <label for="password">Password</label>
+                        <!--- Password --->
+                        <div class="row">
+                            <div class="input-field valign-wrapper center-align col s12">
+                                <i class="fas fa-unlock-alt prefix white-text"></i>
+                                <input id="password" name="password" type="password" class="validate"
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                                <!-- Password must contain at least one number, Uppercase and lowercase letter -->
+                                <!-- Must be at least 6 characters or more -->
+                                <label for="password">Password</label>
+                            </div>
                         </div>
-                    </div>
-                    <!--- Update Btn --->
-                    <div class="row">
-                        <button class="btn waves-effect waves-light col s12" type="submit" name="action">Update
-                            <i class="fas fa-edit"></i>
-                        </button>
-                    </div>
-                </form>
-               
-        </div>
-    </div>
+                        <!--- Update Btn --->
+                        <div class="row">
+                            <button class="btn waves-effect waves-light col s12" type="submit" name="action">Update
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
     </section>
 </body>
 
-    
-{% endblock %}
 
+{% endblock %}

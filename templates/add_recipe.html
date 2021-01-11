@@ -2,8 +2,8 @@
 {% block content %}
 
 <body>
-    <div id="bg4">
-        <div class="wrapper" style="height: 900px;">            
+    <div id="bg7" style="height: 900px;">
+        <div class="wrapper" style="height: 900px;">
             <div class="row card-panel add-recipe">
                 <h5 class="center white-text">Add Recipe</h5>
                 <!--- Add Recipe form from materialize --->
@@ -12,20 +12,19 @@
                     <div class="row">
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-pepper-hot prefix white-text"></i>
-                            <input id="recipe_name" name="recipe_name" type="text" 
-                            class="validate white-text" 
-                            minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate white-text"
+                                minlength="3" maxlength="15" pattern="[a-zA-Z]{3,15}" required>
                             <label for="recipe_name">Recipe Name</label>
-                        </div>                  
+                        </div>
                         <!-- Recipe Image -->
-                       
+
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-file-image prefix white-text"></i>
-                            <input id="recipe_image" name="recipe_image" type="url" 
-                            pattern="https?://.+" class="validate" required>
+                            <input id="recipe_image" name="recipe_image" type="url" pattern="https?://.+"
+                                class="validate" required>
                             <label for="recipe_image">Recipe Image</label>
                         </div>
-                        
+
                         <!--
                               <div class="file-field input-field col s12 m6 add-recipe-input">                            
                             <div class="btn">
@@ -38,7 +37,7 @@
                             </div>
                         </div> 
                         -->
-                     
+
                     </div>
                     <!-- Recipe Description -->
                     <div class="row">
@@ -53,8 +52,8 @@
                     <div class="row">
                         <div class="input-field col s12 add-recipe-input">
                             <i class="fas fa-list prefix white-text"></i>
-                            <textarea id="ingredients_list" type="text" name="ingredients_list" 
-                            data-length="120" class="materialize-textarea validate"></textarea>
+                            <textarea id="ingredients_list" type="text" name="ingredients_list" data-length="120"
+                                class="materialize-textarea validate"></textarea>
                             <label for="ingredients_list">List Of Ingredients</label>
                         </div>
                     </div>
@@ -65,8 +64,8 @@
                             <textarea id="method_step1" type="text" name="method_step1" data-length="150"
                                 class="materialize-textarea validate"></textarea>
                             <label for="method_step1">Method Step One</label>
-                        </div>                  
-                    <!--- Method Step 2 --->                   
+                        </div>
+                        <!--- Method Step 2 --->
                         <div class="input-field col s12 m6 add-recipe-input">
                             <i class="fas fa-drumstick-bite prefix white-text"></i>
                             <textarea id="method_step2" type="text" name="method_step2" data-length="120"
@@ -80,7 +79,7 @@
                         <select id="category_name" name="category_name" class="validate" required>
                             <option value="" disabled selected>Choose a Category</option>
                             {% for category in categories %}
-                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                             {% endfor %}
                         </select>
                         <label>Category</label>
@@ -117,17 +116,16 @@
                             </label>
                         </p>
                     </div>
-                   <!--- Register Btn --->
+                    <!--- Register Btn --->
                     <div class="row">
                         <button class="btn waves-effect waves-light col s12" type="submit">Add Recipe
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </form>
-               
+
             </div>
         </div>
     </div>
-</body>    
+</body>
 {% endblock %}
-

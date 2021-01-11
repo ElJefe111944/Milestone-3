@@ -52,21 +52,6 @@ def search():
     recipes = mongo.db.recipes.find({"$text": {"$search": search_recipe}})
     return render_template("recipes.html", recipes=recipes)
 
-"""
-# Filter
-@app.route("/filter", methods=["GET", "POST"])
-def filter():
-    # find category names from mongodb
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    # Select by category name 
-    category_name_search = request.form.get("category_name_search")
-    recipes = mongo.db.recipes.find({
-        "$text": {"$search": '"'+category_name_search+'"'}}).sort("recipe_name", 1)
-    
-    # Search results found
-    return render_template("recipes.html", recipe_name=recipe_name,
-    category_name=category_name)
-"""
 
 # Registration 
 @app.route("/register", methods=["GET", "POST"])
@@ -82,15 +67,15 @@ def register():
             # redirect user back to register form
             return redirect(url_for("register"))
             
-            register = {
-                "username": request.form.get("username").lower(),
-                "password": generate_password_hash(
-                    request.form.get("password")),
-                "profile_image": request.form.get("profile_image"),
-                "about": request.form.get("about")
-            }                  
-           
-            mongo.db.users.insert_one(register)
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(
+                request.form.get("password")),
+            "profile_image": request.form.get("profile_image"),
+            "about": request.form.get("about")
+        }                 
+        
+        mongo.db.users.insert_one(register)
 
         # new user into session using session cookie
         session["users"] = request.form.get("username").lower()
@@ -259,6 +244,19 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
+
+# Add Category
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+         "category_name": request.form.get("category_name")   
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Successfully Added")
+        return redirect(url_for('get_categories'))
+        
+    return render_template("add_category.html")
 
 
 if __name__ == "__main__":

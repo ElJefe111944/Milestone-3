@@ -8,7 +8,7 @@
             <div class="row card-panel">
                 <h4 class="center white-text">Register</h4>
                 <!--- Registration form from materialize --->
-                <form action="{{ url_for('register') }}" method="POST" class="s12" enctype="multipart/form-data">
+                <form action="{{ url_for('register') }}" method="POST" class="s12">
                     <!-- Username -->
                     <div class="row">
                         <div class="input-field col s12">
@@ -19,8 +19,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <!-- Profile Image -->
-                       
+                        <!-- Profile Image -->                       
                         <div class="input-field col s12">
                             <i class="fas fa-file-image prefix white-text"></i>
                             <input id="profile_image" name="profile_image" type="url" pattern="https?://.+"
