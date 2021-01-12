@@ -360,8 +360,7 @@ i.fas.fa-undo-alt {
 #bg6 {
     background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bk6.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
+    background-size: cover;    
     background-position: center center;
 }
 
@@ -410,6 +409,36 @@ button.btn.waves-effect.waves-light.col.s4 {
 }
 
 /*-- Media Query --*/
+@media screen and (max-width:1024px){
+.wrapper.login {
+    height: 500px;
+}
+#bg3 {
+    height: 500px;
+}
+.wrapper.register {
+    height: 600px;
+}
+div#bg2 {
+    height: 600px;
+}
+    .wrapper.update {
+    height: 950px !important;
+}
+    div#bg5 {
+    height: 950px !important;
+}
+}
+
+
+@media screen and (max-width:900px){
+    .wrapper.update {
+    height: 1000px !important;
+}
+    div#bg5 {
+    height: 1000px !important;
+}
+}
 
 @media screen and (max-width:769px){
 .row.card-panel.recipe-search-bar {
@@ -417,13 +446,27 @@ button.btn.waves-effect.waves-light.col.s4 {
     padding: 5px;
 }
 .wrapper.update {
-    height: 800px !important;
+    height: 1050px !important;
 }
 div#bg5 {
-    height: 800px !important;
+    height: 1050px !important;
+}
+.wrapper.login {
+    height: 500px;
+}
+#bg3 {
+    height: 500px;
 }
 }
 
+@media screen and (max-width:700px){
+.wrapper.update {
+    height: 1250px !important;
+}
+div#bg5 {
+    height: 1250px !important;
+}
+}
 
 @media screen and (max-width:600px){
 .row.card-panel.recipe-search-bar {
@@ -431,10 +474,10 @@ div#bg5 {
     padding: 5px;
 }
 .wrapper.update {
-    height: 1000px !important;
+    height: 1130px !important;
 }
 div#bg5 {
-    height: 1000px !important;
+    height: 1130px !important;
 }
 }
 
@@ -459,10 +502,10 @@ a.waves-effect.waves-light.red.darken-4.btn-small {
     width: 90%;
 }
 .wrapper.update {
-    height: 1100px !important;
+    height: 1225px !important;
 }
 div#bg5 {
-    height: 1100px !important;
+    height: 1225px !important;
 }
 .row.card-panel.login-form {
     width: 90%;
