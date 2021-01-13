@@ -239,18 +239,17 @@ i.fas.fa-undo-alt {
     line-height: unset;
 }
 
-.collapsible {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
 /*--- Registration Page ---*/
 #bg2 {
     background-image: url(https://lamexicanaapp.s3.eu-west-2.amazonaws.com/bg2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 700px;
     background-position: center center;
+}
+
+.wrapper.register {
+    height: 700px;
 }
 
 .row {
@@ -411,16 +410,16 @@ button.btn.waves-effect.waves-light.col.s4 {
 /*-- Media Query --*/
 @media screen and (max-width:1024px){
 .wrapper.login {
-    height: 500px;
+    height: 1100px;
 }
 #bg3 {
-    height: 500px;
+    height: 1100px;
 }
 .wrapper.register {
-    height: 600px;
+    height: 710px;
 }
 div#bg2 {
-    height: 600px;
+    height: 710px;
 }
     .wrapper.update {
     height: 950px !important;
@@ -452,10 +451,10 @@ div#bg5 {
     height: 1050px !important;
 }
 .wrapper.login {
-    height: 500px;
+    height: 700px;
 }
 #bg3 {
-    height: 500px;
+    height: 700px;
 }
 }
 
