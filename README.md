@@ -93,25 +93,23 @@ Used as the main font for all other text throughout the site. This also includes
 
 ## Wireframes:
 Below are the wireframes which represent the initial design for each page on both desktop and mobile views.
-<details><summary>Base Template</summary>
 
-
-
-</details>
-
--	Home Page
--	All Recipes 
--	Recipe Page
--	Login
--	Register 
--	Profile Page
--	All Users 
--	Add Recipe
--	Update Recipe 
--	Edit Profile 
+-	[Base Template](static/images/wireframes/base-html.pdf)
+-	[Home Page](static/images/wireframes/index-html.pdf)
+-	[All Recipes](static/images/wireframes/all-recipes-html.pdf)
+-	[Recipe Page](static/images/wireframes/recipe-html.pdf)
+-	[Login](static/images/wireframes/login-html.pdf)
+-	[Register](static/images/wireframes/register-html.pdf)
+-	[Profile Page](static/images/wireframes/profile-html.pdf)
+-	[All Users](static/images/wireframes/all-users-html.pdf)
+-	[Add Recipe](static/images/wireframes/add-recipe-html.pdf)
+-	[Update Recipe](static/images/wireframes/edit-recipe-html.pdf)
+-	[Edit Profile](static/images/wireframes/edit-profile-html.pdf)
 
 ### Datebase:
 MongoDB has been used to store the data for this site. The MongoDB database called la_mexicana contains 3 collection called recipes, categories and users. Each category and the corresponding data fields for this project are illustrated in the database schemas below.
+<br>
+[Database Schema](static/wireframes/wireframes.pdf)
 
 ## Features 
 The site contains certain features which are not available to all user. Such features provide the CRUD operations on the user’s account and recipes. These have been restricted to the Admin user and registered users. All other content is available for all users to view.
