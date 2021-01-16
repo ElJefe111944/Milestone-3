@@ -94,17 +94,17 @@ Used as the main font for all other text throughout the site. This also includes
 ## Wireframes:
 Below are the wireframes which represent the initial design for each page on both desktop and mobile views.
 
--	[Base Template](static/images/wireframes/base-html.pdf)
--	[Home Page](static/images/wireframes/index-html.pdf)
--	[All Recipes](static/images/wireframes/all-recipes-html.pdf)
--	[Recipe Page](static/images/wireframes/recipe-html.pdf)
--	[Login](static/images/wireframes/login-html.pdf)
--	[Register](static/images/wireframes/register-html.pdf)
--	[Profile Page](static/images/wireframes/profile-html.pdf)
--	[All Users](static/images/wireframes/all-users-html.pdf)
--	[Add Recipe](static/images/wireframes/add-recipe-html.pdf)
--	[Update Recipe](static/images/wireframes/edit-recipe-html.pdf)
--	[Edit Profile](static/images/wireframes/edit-profile-html.pdf)
+-	[Base Template](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/base-html.pdf)
+-	[Home Page](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/index-html.pdf)
+-	[All Recipes](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/all-recipes-html.pdf)
+-	[Recipe Page](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/recipe-html.pdf)
+-	[Login](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/login-html.pdf)
+-	[Register](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/register-html.pdf)
+-	[Profile Page](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/profile-html.pdf)
+-	[All Users](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/all-users-html.pdf)
+-	[Add Recipe](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/add-recipe-html.pdf)
+-	[Update Recipe](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/edit-recipe-html.pdf)
+-	[Edit Profile](https://github.com/ElJefe111944/Milestone-3/blob/abfbea5a3f85c1d6644049021c3b32a33a2fe49b/static/images/wireframes/edit-profile-html.pdf)
 
 ### Datebase:
 MongoDB has been used to store the data for this site. The MongoDB database called la_mexicana contains 3 collection called recipes, categories and users. Each category and the corresponding data fields for this project are illustrated in the database schemas below.
