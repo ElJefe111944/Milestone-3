@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,13 +10,14 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" /> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
     {% block styles %}
     {% endblock %}
     <title>la_mexicana</title>
 </head>
+
 <body>
-    
+
     <!-- Preloader -->
     <header>
         <div id="preloader"></div>
@@ -74,21 +76,21 @@
         <!--- End side nav bar -->
     </header>
     <section>
-    <!--  flash messages ---->
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="row flashes s12">
-        <h5 class="center-align transparent white-text">{{ message }}</h5>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+        <!--  flash messages ---->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes s12">
+            <h5 class="center-align transparent white-text">{{ message }}</h5>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
     </section>
     <!-- End flash messages -->
     <main>
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
 
     <!-- Compiled and minified JavaScript and JQuery-->
@@ -133,4 +135,5 @@
         </div>
     </footer>
 </body>
+
 </html>

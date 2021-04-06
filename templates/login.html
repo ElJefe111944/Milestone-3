@@ -1,52 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- Landing Image Start -->
-    <div id="bg3">
-        <div class="wrapper login">            
-            <div class="row card-panel login-form">
-                <h4 class="center white-text">Log In</h4>
-                <!-- Login form from materialize -->
-                <form action="{{ url_for('login') }}" method="POST" class="s12">
-                    <!-- Username -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-user prefix white-text"></i>
-                            <input id="username" name="username" type="text" class="validate white-text" 
-                            minlength="3" maxlength="15" pattern="[a-zA-Z0-9]{3,15}" required>
-                            <label for="username">Username</label>
-                        </div>
+<!-- Landing Image Start -->
+<div id="bg3">
+    <div class="wrapper login">
+        <div class="row card-panel login-form">
+            <h4 class="center white-text">Log In</h4>
+            <!-- Login form from materialize -->
+            <form action="{{ url_for('login') }}" method="POST" class="s12">
+                <!-- Username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user prefix white-text"></i>
+                        <input id="username" name="username" type="text" class="validate white-text" minlength="3"
+                            maxlength="15" pattern="[a-zA-Z0-9]{3,15}" required>
+                        <label for="username">Username</label>
                     </div>
-                    <!-- Password -->
-                    <div class="row">
-                        <div class="input-field valign-wrapper center-align col s12">
-                            <i class="fas fa-unlock-alt prefix white-text"></i>
-                            <input id="password" name="password" type="password" class="validate" 
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
-                            <!-- Password must contain at least one number, Uppercase and lowercase letter -->
-                            <!-- Must be at least 6 characters or more -->
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <!-- Login Btn -->
-                    <div class="row">
-                        <button class="btn waves-effect waves-light col s12" type="submit" name="action">Log In
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                    <!-- End of Login Btn -->
-                </form>
-                <!-- End of Login form from materialize -->
-                <!-- Register Btn for new users -->
-                <div class="col s12 register-link">
-                    <p class="center-align white-text">
-                        New User? 
-                        <a href="{{ url_for('register') }}">Register</a>
-                    </p>
                 </div>
-                <!-- End Register Btn for new users -->
+                <!-- Password -->
+                <div class="row">
+                    <div class="input-field valign-wrapper center-align col s12">
+                        <i class="fas fa-unlock-alt prefix white-text"></i>
+                        <input id="password" name="password" type="password" class="validate"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+                        <!-- Password must contain at least one number, Uppercase and lowercase letter -->
+                        <!-- Must be at least 6 characters or more -->
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- Login Btn -->
+                <div class="row">
+                    <button class="btn waves-effect waves-light col s12" type="submit" name="action">Log In
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <!-- End of Login Btn -->
+            </form>
+            <!-- End of Login form from materialize -->
+            <!-- Register Btn for new users -->
+            <div class="col s12 register-link">
+                <p class="center-align white-text">
+                    New User?
+                    <a href="{{ url_for('register') }}">Register</a>
+                </p>
             </div>
+            <!-- End Register Btn for new users -->
         </div>
     </div>
-    <!-- Landing Image End -->    
+</div>
+<!-- Landing Image End -->
 {% endblock %}
-
